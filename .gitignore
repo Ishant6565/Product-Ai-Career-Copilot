@@ -46,6 +46,8 @@ mlpulse/
 sagaflow/
 tenantflow/
 spotify-terraform-devops/
+mental-health-score/
 backend/storage_data/
 .agents/
+*.tsbuildinfo
 
