@@ -1,71 +1,82 @@
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles, Heart, Shield, Terminal, ArrowUpRight } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-[#05070B] text-slate-400 text-xs py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <footer className="border-t-4 border-black bg-white text-black text-xs py-16 px-6 md:px-8 lg:px-12">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         {/* Col 1 */}
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 border border-black bg-black text-white flex items-center justify-center font-mono font-bold text-xs">
+              AC
             </div>
-            <span className="font-bold text-sm text-white">AI Career Copilot</span>
+            <span className="font-serif font-bold text-base tracking-tight text-black">
+              AI CAREER COPILOT
+            </span>
           </div>
-          <p className="text-slate-500 leading-relaxed">
-            The all-in-one AI career intelligence platform helping software engineers and students land top tech roles with precision matching and ATS optimization.
+          <p className="text-mono-600 font-serif leading-relaxed text-xs">
+            The autonomous intelligence platform engineered for software professionals seeking career velocity without computational compromise.
           </p>
+          <div className="font-mono text-2xs uppercase tracking-widest text-mono-400">
+            ISSN 2026-COPILOT &bull; ED. 01
+          </div>
         </div>
 
         {/* Col 2 */}
         <div>
-          <div className="font-semibold text-white mb-3 uppercase tracking-wider text-[11px] font-mono">Platform Modules</div>
-          <ul className="space-y-2">
-            <li><Link href="/dashboard" className="hover:text-cyan-400 transition-colors">Career Dashboard</Link></li>
-            <li><Link href="/jobs" className="hover:text-cyan-400 transition-colors">Semantic Job Discovery</Link></li>
-            <li><Link href="/resumes" className="hover:text-cyan-400 transition-colors">Multi-Version ATS Hub</Link></li>
-            <li><Link href="/tracker" className="hover:text-cyan-400 transition-colors">Kanban Application Tracker</Link></li>
+          <div className="font-mono font-bold text-black mb-4 uppercase tracking-widest text-2xs border-b border-black pb-2">
+            System Modules
+          </div>
+          <ul className="space-y-2.5 font-mono text-2xs uppercase tracking-wider text-mono-600">
+            <li><Link href="/dashboard" className="hover:text-black hover:underline transition-all">01. Command Center</Link></li>
+            <li><Link href="/jobs" className="hover:text-black hover:underline transition-all">02. Semantic Job Discovery</Link></li>
+            <li><Link href="/resumes" className="hover:text-black hover:underline transition-all">03. ATS Audit Registry</Link></li>
+            <li><Link href="/tracker" className="hover:text-black hover:underline transition-all">04. Application Kanban</Link></li>
           </ul>
         </div>
 
         {/* Col 3 */}
         <div>
-          <div className="font-semibold text-white mb-3 uppercase tracking-wider text-[11px] font-mono">AI Intelligence</div>
-          <ul className="space-y-2">
-            <li><Link href="/ai-tools" className="hover:text-cyan-400 transition-colors">Resume Optimization Studio</Link></li>
-            <li><Link href="/ai-tools" className="hover:text-cyan-400 transition-colors">Cover Letter Architect</Link></li>
-            <li><Link href="/ai-tools" className="hover:text-cyan-400 transition-colors">STAR Interview Coach</Link></li>
-            <li><Link href="/analytics" className="hover:text-cyan-400 transition-colors">Pipeline Conversion Funnel</Link></li>
+          <div className="font-mono font-bold text-black mb-4 uppercase tracking-widest text-2xs border-b border-black pb-2">
+            AI Intelligence
+          </div>
+          <ul className="space-y-2.5 font-mono text-2xs uppercase tracking-wider text-mono-600">
+            <li><Link href="/ai-tools" className="hover:text-black hover:underline transition-all">Resume Bullet Studio</Link></li>
+            <li><Link href="/ai-tools" className="hover:text-black hover:underline transition-all">Cover Letter Architect</Link></li>
+            <li><Link href="/ai-tools" className="hover:text-black hover:underline transition-all">STAR Interview Coach</Link></li>
+            <li><Link href="/analytics" className="hover:text-black hover:underline transition-all">Conversion Analytics</Link></li>
           </ul>
         </div>
 
         {/* Col 4 */}
         <div>
-          <div className="font-semibold text-white mb-3 uppercase tracking-wider text-[11px] font-mono">Enterprise Ready</div>
-          <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] space-y-2">
-            <div className="flex items-center gap-2 text-emerald-400 font-mono text-[11px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              API Services Online
+          <div className="font-mono font-bold text-black mb-4 uppercase tracking-widest text-2xs border-b border-black pb-2">
+            Telemetry & Rigor
+          </div>
+          <div className="p-4 border border-black bg-mono-50 space-y-2">
+            <div className="flex items-center gap-2 font-mono text-2xs uppercase tracking-widest font-bold">
+              <span className="w-2 h-2 bg-black inline-block" />
+              Production Active
             </div>
-            <p className="text-[11px] text-slate-500">
-              PostgreSQL + pgvector enabled. Zero hallucination guarantee.
+            <p className="text-2xs text-mono-600 font-serif leading-normal">
+              pgvector similarity models &bull; Zero generative hallucination guarantee.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+      <div className="max-w-6xl mx-auto pt-8 border-t border-mono-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-mono-500 font-mono text-2xs uppercase tracking-wider">
         <div>
-          &copy; {new Date().getFullYear()} AI Career Copilot SaaS. Built for ambitious engineers.
+          &copy; {new Date().getFullYear()} AI Career Copilot. All Rights Reserved.
         </div>
         <div className="flex items-center gap-6">
-          <Link href="/terms" className="hover:text-slate-400 transition-colors">Terms of Service</Link>
-          <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
-          <Link href="/security" className="hover:text-slate-400 transition-colors">Security</Link>
+          <Link href="/terms" className="hover:text-black transition-colors">Terms of Service</Link>
+          <Link href="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link>
+          <Link href="/security" className="hover:text-black transition-colors">Security Protocol</Link>
         </div>
       </div>
     </footer>
   );
 }
+

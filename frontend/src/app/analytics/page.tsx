@@ -3,11 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { 
   BarChart3, TrendingUp, CheckCircle2, PieChart, 
-  Sparkles, Award, ArrowUpRight, Kanban, AlertCircle
+  Award, Kanban, AlertCircle
 } from 'lucide-react';
 import { Sidebar } from '@/components/common/Sidebar';
 import { AppHeader } from '@/components/common/AppHeader';
-import { Card, CardHeader, CardTitle } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { Badge } from '@/components/common/Badge';
 import { useAuth } from '@/lib/auth-context';
@@ -35,165 +34,168 @@ export default function AnalyticsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-row selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-white text-black flex flex-row font-body selection:bg-black selection:text-white">
       <Sidebar />
 
       <main className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         <AppHeader
-          title="Career Analytics & Conversion Funnel"
-          subtitle="Pipeline velocity, stage conversion efficiency, and market skill demand"
+          title="Conversion Telemetry & Skill Funnel"
+          subtitle="Pipeline velocity, interview conversion ratios, and market capability distribution"
         />
 
-        <div className="p-6 space-y-6 max-w-7xl w-full mx-auto">
+        <div className="p-8 space-y-8 max-w-7xl w-full mx-auto">
           {/* Top Funnel KPIs */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Card className="p-5 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="text-xs text-slate-400">Total Tracked Applications</div>
-              <div className="text-3xl font-extrabold font-mono text-white mt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-6 border-2 border-black bg-white">
+              <div className="font-mono text-2xs uppercase tracking-widest text-mono-500">Tracked Pipeline Roles</div>
+              <div className="font-serif text-4xl font-bold text-black mt-2">
                 {analytics?.total_applications || 5}
               </div>
-              <div className="text-[11px] text-emerald-400 mt-1 flex items-center gap-1">
-                <TrendingUp className="w-3 h-3" /> Healthy pipeline velocity
+              <div className="font-mono text-2xs text-mono-500 mt-2 flex items-center gap-1">
+                <span>Healthy velocity</span>
               </div>
-            </Card>
+            </div>
 
-            <Card className="p-5 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="text-xs text-slate-400">Interview Conversion Rate</div>
-              <div className="text-3xl font-extrabold font-mono text-cyan-400 mt-1">
+            <div className="p-6 border-2 border-black bg-black text-white">
+              <div className="font-mono text-2xs uppercase tracking-widest text-mono-400">Interview Conversion</div>
+              <div className="font-serif text-4xl font-bold text-white mt-2">
                 {analytics?.interview_conversion_rate || 40.0}%
               </div>
-              <div className="text-[11px] text-slate-400 mt-1">
-                2.8x higher than industry avg (14%)
+              <div className="font-mono text-2xs uppercase tracking-wider text-mono-300 mt-2">
+                2.8x benchmark baseline (14%)
               </div>
-            </Card>
+            </div>
 
-            <Card className="p-5 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="text-xs text-slate-400">Response Rate</div>
-              <div className="text-3xl font-extrabold font-mono text-emerald-400 mt-1">
+            <div className="p-6 border-2 border-black bg-white">
+              <div className="font-mono text-2xs uppercase tracking-widest text-mono-500">Response Ratio</div>
+              <div className="font-serif text-4xl font-bold text-black mt-2">
                 {analytics?.response_rate || 60.0}%
               </div>
-              <div className="text-[11px] text-emerald-300 mt-1">
-                Based on tailored ATS resumes
+              <div className="font-mono text-2xs text-mono-500 mt-2">
+                Driven by calibrated ATS dossiers
               </div>
-            </Card>
+            </div>
 
-            <Card className="p-5 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="text-xs text-slate-400">Avg Job Match Index</div>
-              <div className="text-3xl font-extrabold font-mono text-violet-400 mt-1">
+            <div className="p-6 border-2 border-black bg-white">
+              <div className="font-mono text-2xs uppercase tracking-widest text-mono-500">Mean Vector Fit</div>
+              <div className="font-serif text-4xl font-bold text-black mt-2">
                 {analytics?.average_match_score || 91}%
               </div>
-              <div className="text-[11px] text-violet-300 mt-1">
+              <div className="font-mono text-2xs text-mono-500 mt-2">
                 Top 8% candidate alignment
               </div>
-            </Card>
+            </div>
           </div>
 
           {/* Application Funnel Visualization */}
-          <Card className="p-6 space-y-5">
-            <CardHeader>
-              <CardTitle>
-                <Kanban className="w-4 h-4 text-indigo-400" />
-                Hiring Stage Conversion Funnel
-              </CardTitle>
-              <span className="text-xs text-slate-400">Progression from Saved to Formal Offer</span>
-            </CardHeader>
+          <div className="p-8 border-2 border-black bg-white space-y-6">
+            <div className="flex items-center justify-between border-b border-black pb-3">
+              <div>
+                <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black flex items-center gap-2">
+                  <Kanban className="w-4 h-4" />
+                  Stage Progression Funnel
+                </h3>
+                <p className="font-mono text-2xs uppercase tracking-widest text-mono-500 mt-0.5">Telemetry transition from Saved to Executed Offer</p>
+              </div>
+            </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
               {[
-                { stage: 'Saved', count: analytics?.applications_by_status.saved || 1, color: 'bg-slate-500', width: 'w-full' },
-                { stage: 'Applied', count: analytics?.applications_by_status.applied || 1, color: 'bg-indigo-500', width: 'w-4/5' },
-                { stage: 'Screening', count: analytics?.applications_by_status.screening || 1, color: 'bg-cyan-500', width: 'w-3/5' },
-                { stage: 'Interview', count: analytics?.applications_by_status.interview || 1, color: 'bg-violet-500', width: 'w-2/5' },
-                { stage: 'Offer', count: analytics?.applications_by_status.offer || 1, color: 'bg-emerald-500', width: 'w-1/4' },
+                { stage: 'Saved', count: analytics?.applications_by_status.saved || 1 },
+                { stage: 'Applied', count: analytics?.applications_by_status.applied || 1 },
+                { stage: 'Screening', count: analytics?.applications_by_status.screening || 1 },
+                { stage: 'Interview', count: analytics?.applications_by_status.interview || 1 },
+                { stage: 'Offer', count: analytics?.applications_by_status.offer || 1 },
               ].map((step, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
-                  <div className="text-xs font-semibold text-slate-300">{step.stage}</div>
-                  <div className="text-2xl font-bold font-mono text-white">{step.count}</div>
-                  <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div className={`h-full ${step.color} rounded-full`} />
+                <div key={idx} className="p-5 border border-black bg-mono-50 space-y-2 font-mono">
+                  <div className="text-2xs uppercase tracking-wider text-mono-500 font-bold">{step.stage}</div>
+                  <div className="font-serif text-3xl font-bold text-black">{step.count}</div>
+                  <div className="h-1.5 w-full bg-mono-200 overflow-hidden">
+                    <div className="h-full bg-black" style={{ width: `${Math.min(100, (step.count / 5) * 100)}%` }} />
                   </div>
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
 
           {/* Two Column Grid: Market Skill Demand vs Skill Gaps */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Top In-Demand Market Skills (6 cols) */}
-            <div className="lg:col-span-6 space-y-4">
-              <Card className="p-6 space-y-4">
-                <CardHeader>
-                  <CardTitle>Top In-Demand Skills in Target Roles</CardTitle>
-                  <Badge variant="cyan" size="sm">Market Demand %</Badge>
-                </CardHeader>
+            <div className="lg:col-span-6 space-y-6">
+              <div className="p-8 border-2 border-black bg-white space-y-6">
+                <div className="flex items-center justify-between border-b border-black pb-3">
+                  <h3 className="font-serif text-lg font-bold uppercase tracking-tight text-black">Top Market Demand Vectors</h3>
+                  <Badge variant="solid" size="sm">Target Roles %</Badge>
+                </div>
 
-                <div className="space-y-3">
+                <div className="space-y-4 font-mono text-xs">
                   {analytics?.top_in_demand_skills?.map((item, idx) => (
                     <div key={idx} className="space-y-1.5">
-                      <div className="flex items-center justify-between text-xs">
+                      <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <span className="font-semibold text-white">{item.skill}</span>
+                          <span className="font-bold text-black">{item.skill}</span>
                           {item.user_has ? (
-                            <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded font-mono">
-                              In Profile
+                            <span className="text-2xs px-1.5 py-0.2 bg-black text-white">
+                              VERIFIED
                             </span>
                           ) : (
-                            <span className="text-[10px] text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded font-mono">
-                              Missing
+                            <span className="text-2xs px-1.5 py-0.2 border border-black bg-white text-black">
+                              GAP
                             </span>
                           )}
                         </div>
-                        <span className="font-mono text-slate-400">{item.demand_percentage}% of jobs</span>
+                        <span className="text-mono-500 text-2xs">{item.demand_percentage}% of listings</span>
                       </div>
 
-                      <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-2 w-full bg-mono-100 border border-mono-300 overflow-hidden">
                         <div 
-                          className={`h-full rounded-full ${item.user_has ? 'bg-gradient-to-r from-indigo-500 to-cyan-400' : 'bg-amber-500/60'}`}
+                          className={`h-full ${item.user_has ? 'bg-black' : 'bg-mono-400'}`}
                           style={{ width: `${item.demand_percentage}%` }}
                         />
                       </div>
                     </div>
                   ))}
                 </div>
-              </Card>
+              </div>
             </div>
 
             {/* High-Impact Skill Gap Roadmap (6 cols) */}
-            <div className="lg:col-span-6 space-y-4">
-              <Card className="p-6 space-y-4 border-amber-500/20 bg-amber-950/5">
-                <CardHeader>
-                  <CardTitle className="text-amber-300">
-                    <AlertCircle className="w-4 h-4 text-amber-400" />
-                    Targeted Skill Gap Roadmap
-                  </CardTitle>
-                  <Badge variant="amber" size="sm">High ROI</Badge>
-                </CardHeader>
+            <div className="lg:col-span-6 space-y-6">
+              <div className="p-8 border-2 border-black bg-mono-50 space-y-6">
+                <div className="flex items-center justify-between border-b border-black pb-3">
+                  <h3 className="font-serif text-lg font-bold uppercase tracking-tight text-black flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4" />
+                    Capability Gap Remediation
+                  </h3>
+                  <Badge variant="outline" size="sm">High ROI</Badge>
+                </div>
 
-                <p className="text-xs text-slate-400">
-                  Estimated learning time and action items to eliminate blockers from your target roles:
+                <p className="font-serif text-xs text-mono-600">
+                  Estimated engineering time and architectural milestones to eliminate requirements blockers:
                 </p>
 
-                <div className="space-y-3 pt-1">
+                <div className="space-y-4 pt-1">
                   {analytics?.skill_gap_matrix?.map((gap, idx) => (
-                    <div key={idx} className="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-2 text-xs">
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-white text-sm">{gap.skill}</span>
-                        <span className="font-mono text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded">
+                    <div key={idx} className="p-5 border border-black bg-white space-y-2.5 font-mono text-xs">
+                      <div className="flex items-center justify-between border-b border-mono-200 pb-1.5">
+                        <span className="font-serif font-bold text-black text-sm">{gap.skill}</span>
+                        <span className="text-2xs px-2 py-0.5 border border-black bg-black text-white font-bold">
                           ~{gap.estimated_hours} Hours
                         </span>
                       </div>
 
-                      <p className="text-slate-300">
-                        <strong>Recommended Project:</strong> {gap.recommended_action}
+                      <p className="font-serif text-xs text-mono-700">
+                        <strong className="font-mono text-2xs uppercase tracking-wider text-black block mb-0.5">Action Blueprint:</strong>
+                        {gap.recommended_action}
                       </p>
 
-                      <div className="text-[11px] text-slate-400">
-                        Appears as missing requirement in {gap.missing_in_jobs} saved roles.
+                      <div className="text-2xs text-mono-500 uppercase tracking-wider">
+                        Missing in {gap.missing_in_jobs} saved position dossiers.
                       </div>
                     </div>
                   ))}
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>
@@ -201,3 +203,4 @@ export default function AnalyticsPage() {
     </div>
   );
 }
+

@@ -2,30 +2,39 @@ import React from 'react';
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'emerald' | 'amber' | 'rose' | 'cyan' | 'violet' | 'indigo' | 'slate';
+  variant?: 'default' | 'solid' | 'muted' | 'outline' | 'emerald' | 'amber' | 'rose' | 'cyan' | 'violet' | 'indigo' | 'slate';
   size?: 'sm' | 'md';
   className?: string;
 }
 
-export function Badge({ children, variant = 'indigo', size = 'md', className = '' }: BadgeProps) {
-  const variantStyles = {
-    emerald: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
-    amber: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
-    rose: 'bg-rose-500/15 text-rose-300 border-rose-500/30',
-    cyan: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
-    violet: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
-    indigo: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30',
-    slate: 'bg-white/5 text-slate-300 border-white/10',
+export function Badge({ children, variant = 'default', size = 'md', className = '' }: BadgeProps) {
+  // Pure monochrome palette: map any legacy color names gracefully to sharp black/white variants
+  const variantStyles: Record<string, string> = {
+    default: 'bg-transparent text-black border-black',
+    solid: 'bg-black text-white border-black',
+    muted: 'bg-mono-100 text-mono-700 border-mono-300',
+    outline: 'bg-white text-black border-black',
+    // Fallback mappings for existing pages
+    emerald: 'bg-mono-100 text-black border-black',
+    amber: 'bg-mono-100 text-black border-black',
+    rose: 'bg-black text-white border-black',
+    cyan: 'bg-transparent text-black border-black',
+    violet: 'bg-mono-100 text-black border-black',
+    indigo: 'bg-black text-white border-black',
+    slate: 'bg-transparent text-mono-600 border-mono-300',
   };
 
   const sizeStyles = {
-    sm: 'text-[10px] px-2 py-0.5 font-mono',
-    md: 'text-xs px-2.5 py-1 font-medium',
+    sm: 'text-2xs px-2 py-0.5 font-mono tracking-wider uppercase',
+    md: 'text-xs px-2.5 py-1 font-mono tracking-wider uppercase',
   };
 
+  const selectedVariantStyle = variantStyles[variant] || variantStyles.default;
+
   return (
-    <span className={`inline-flex items-center gap-1 rounded-lg border font-mono tracking-tight ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}>
+    <span className={`inline-flex items-center gap-1.5 border font-mono rounded-none select-none ${selectedVariantStyle} ${sizeStyles[size]} ${className}`}>
       {children}
     </span>
   );
 }
+

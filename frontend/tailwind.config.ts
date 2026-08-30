@@ -7,43 +7,81 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    borderRadius: {
+      none: "0px",
+      sm: "0px",
+      DEFAULT: "0px",
+      md: "0px",
+      lg: "0px",
+      xl: "0px",
+      "2xl": "0px",
+      "3xl": "0px",
+      full: "0px",
+    },
     extend: {
       colors: {
-        background: "#070A0F",
-        surface: "#0B0F19",
-        "surface-card": "rgba(15, 23, 42, 0.75)",
-        "surface-border": "rgba(255, 255, 255, 0.08)",
-        brand: {
-          50: "#EEF2FF",
-          500: "#6366F1",
-          600: "#4F46E5",
-          700: "#4338CA",
+        background: "#FFFFFF",
+        foreground: "#000000",
+        muted: "#F5F5F5",
+        mutedForeground: "#525252",
+        accent: "#000000",
+        accentForeground: "#FFFFFF",
+        border: "#000000",
+        borderLight: "#E5E5E5",
+        card: "#FFFFFF",
+        cardForeground: "#000000",
+        ring: "#000000",
+        mono: {
+          50: "#FAFAFA",
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+          950: "#0A0A0A",
         },
-        cyber: {
-          cyan: "#06B6D4",
-          emerald: "#10B981",
-          amber: "#F59E0B",
-          rose: "#F43F5E",
-          violet: "#8B5CF6",
-        }
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        display: ["Playfair Display", "Georgia", "serif"],
+        serif: ["Playfair Display", "Georgia", "serif"],
+        body: ["Source Serif 4", "Georgia", "serif"],
+        mono: ["JetBrains Mono", "monospace"],
+        sans: ["Source Serif 4", "Georgia", "serif"],
       },
-      animation: {
-        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "glow-line": "glowLine 2s ease-in-out infinite alternate",
+      fontSize: {
+        "2xs": "0.65rem",
+        xs: "0.75rem",
+        sm: "0.875rem",
+        base: "1rem",
+        lg: "1.125rem",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+        "4xl": "2.5rem",
+        "5xl": "3.5rem",
+        "6xl": "4.5rem",
+        "7xl": "6rem",
+        "8xl": "8rem",
+        "9xl": "10rem",
       },
-      keyframes: {
-        glowLine: {
-          "0%": { opacity: "0.4", filter: "drop-shadow(0 0 2px #6366F1)" },
-          "100%": { opacity: "1", filter: "drop-shadow(0 0 8px #06B6D4)" },
-        }
-      }
+      borderWidth: {
+        1: "1px",
+        3: "3px",
+        4: "4px",
+        8: "8px",
+      },
+      transitionDuration: {
+        0: "0ms",
+        100: "100ms",
+      },
     },
   },
   plugins: [],
 };
 
 export default config;
+

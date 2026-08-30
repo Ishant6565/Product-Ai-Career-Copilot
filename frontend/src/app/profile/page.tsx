@@ -3,12 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { 
   User, Briefcase, GraduationCap, Code, Award, 
-  DollarSign, Link2, Plus, Trash2, CheckCircle2, 
-  Save, Sparkles, Wand2, RefreshCw
+  DollarSign, Plus, Trash2, CheckCircle2, 
+  Save
 } from 'lucide-react';
 import { Sidebar } from '@/components/common/Sidebar';
 import { AppHeader } from '@/components/common/AppHeader';
-import { Card, CardHeader, CardTitle } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { Badge } from '@/components/common/Badge';
 import { useAuth } from '@/lib/auth-context';
@@ -107,36 +106,36 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-row selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-white text-black flex flex-row font-body selection:bg-black selection:text-white">
       <Sidebar />
 
       <main className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         <AppHeader 
-          title="Career Profile & Skill Matrix" 
-          subtitle="Configure your structured profile, background, and career targets"
+          title="Candidate Dossier & Skill Taxonomy" 
+          subtitle="Configure structured telemetry, engineering background, and compensation parameters"
           actionButton={
             <Button
               size="sm"
               variant="primary"
               onClick={handleSave}
               isLoading={isSaving}
-              leftIcon={savedSuccess ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" /> : <Save className="w-3.5 h-3.5" />}
+              leftIcon={savedSuccess ? <CheckCircle2 className="w-3.5 h-3.5 text-white" /> : <Save className="w-3.5 h-3.5" />}
             >
-              {savedSuccess ? 'Saved Changes!' : 'Save Profile'}
+              {savedSuccess ? 'Changes Committed' : 'Commit Dossier'}
             </Button>
           }
         />
 
-        <div className="p-6 space-y-6 max-w-6xl w-full mx-auto">
+        <div className="p-8 space-y-8 max-w-6xl w-full mx-auto">
           {/* Navigation Tabs */}
-          <div className="flex items-center gap-2 border-b border-white/5 pb-2 overflow-x-auto">
+          <div className="flex items-center gap-2 border-b-2 border-black pb-3 overflow-x-auto">
             {[
-              { id: 'info', label: 'Personal & Bio', icon: User },
-              { id: 'skills', label: `Skills (${skills.length})`, icon: Code },
+              { id: 'info', label: 'Identity & Bio', icon: User },
+              { id: 'skills', label: `Taxonomy (${skills.length})`, icon: Code },
               { id: 'experience', label: `Experience (${experience.length})`, icon: Briefcase },
               { id: 'education', label: `Education (${education.length})`, icon: GraduationCap },
               { id: 'projects', label: `Projects (${projects.length})`, icon: Award },
-              { id: 'preferences', label: 'Salary & Career Fit', icon: DollarSign },
+              { id: 'preferences', label: 'Compensation Targets', icon: DollarSign },
             ].map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -144,13 +143,13 @@ export default function ProfilePage() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                  className={`flex items-center gap-2 px-4 py-2 font-mono text-xs uppercase tracking-wider font-bold whitespace-nowrap border transition-colors duration-100 ${
                     isActive
-                      ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      ? 'bg-black text-white border-black'
+                      : 'bg-white text-black border-black hover:bg-mono-100'
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" />
+                  <Icon className="w-3.5 h-3.5" strokeWidth={1.5} />
                   <span>{tab.label}</span>
                 </button>
               );
@@ -159,139 +158,143 @@ export default function ProfilePage() {
 
           {/* TAB 1: Personal Info & Bio */}
           {activeTab === 'info' && (
-            <Card className="p-6 space-y-5">
-              <CardHeader>
-                <CardTitle>Personal Information & Career Narrative</CardTitle>
-                <span className="text-xs text-slate-400">Used for ATS headers and AI matching</span>
-              </CardHeader>
+            <div className="p-8 border-2 border-black bg-white space-y-6">
+              <div className="border-b border-black pb-3">
+                <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black">
+                  Candidate Identity & Engineering Narrative
+                </h3>
+                <p className="font-mono text-2xs uppercase tracking-widest text-mono-500 mt-0.5">Used for ATS header extraction and semantic alignment</p>
+              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">Target Job Title</label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-mono text-xs">
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Target Role Title</label>
                   <input
                     type="text"
                     value={targetRole}
                     onChange={(e) => setTargetRole(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">Experience Level</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Experience Tier</label>
                   <input
                     type="text"
                     value={experienceLevel}
                     onChange={(e) => setExperienceLevel(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">Location</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Location Base</label>
                   <input
                     type="text"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">Contact Phone</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Contact Line</label>
                   <input
                     type="text"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+1 (555) 000-0000"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1.5">Professional Bio & Summary</label>
+              <div className="space-y-1.5 font-mono text-xs">
+                <label className="block uppercase tracking-wider font-bold text-mono-700">Professional Dossier Summary</label>
                 <textarea
                   rows={4}
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
-                  placeholder="Summarize your engineering expertise and core impact..."
-                  className="w-full p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                  placeholder="Summarize your systems engineering specialization and verified impact..."
+                  className="w-full p-3.5 border-2 border-black bg-white text-black font-body text-sm placeholder:italic placeholder:text-mono-400 focus:outline-none focus:border-b-4 focus:border-black"
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">GitHub URL</label>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2 font-mono text-xs">
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">GitHub Repository</label>
                   <input
                     type="text"
                     value={links.github || ''}
                     onChange={(e) => setLinks({ ...links, github: e.target.value })}
                     placeholder="https://github.com/username"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">LinkedIn Profile</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">LinkedIn Profile</label>
                   <input
                     type="text"
                     value={links.linkedin || ''}
                     onChange={(e) => setLinks({ ...links, linkedin: e.target.value })}
                     placeholder="https://linkedin.com/in/username"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">Portfolio / Website</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Personal Domain</label>
                   <input
                     type="text"
                     value={links.portfolio || ''}
                     onChange={(e) => setLinks({ ...links, portfolio: e.target.value })}
                     placeholder="https://mywebsite.dev"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
               </div>
-            </Card>
+            </div>
           )}
 
           {/* TAB 2: Skills Matrix */}
           {activeTab === 'skills' && (
-            <Card className="p-6 space-y-6">
-              <CardHeader>
-                <CardTitle>Technical Skills Taxonomy</CardTitle>
-                <span className="text-xs text-slate-400">Add or classify your technical skills</span>
-              </CardHeader>
+            <div className="p-8 border-2 border-black bg-white space-y-6">
+              <div className="border-b border-black pb-3">
+                <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black">
+                  Technical Skill Classification Taxonomy
+                </h3>
+                <p className="font-mono text-2xs uppercase tracking-widest text-mono-500 mt-0.5">Define verified engineering capabilities and frameworks</p>
+              </div>
 
               {/* Add New Skill Bar */}
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10 grid grid-cols-1 sm:grid-cols-4 gap-3 items-end">
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">Skill Name</label>
+              <div className="p-6 border-2 border-black bg-mono-50 grid grid-cols-1 sm:grid-cols-4 gap-4 items-end font-mono text-xs">
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Capability</label>
                   <input
                     type="text"
                     value={newSkillName}
                     onChange={(e) => setNewSkillName(e.target.value)}
-                    placeholder="e.g. Kubernetes, Golang"
-                    className="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white focus:outline-none focus:border-cyan-400"
+                    placeholder="e.g. Kubernetes, Go"
+                    className="w-full p-2.5 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">Category</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Domain Category</label>
                   <select
                     value={newSkillCategory}
                     onChange={(e) => setNewSkillCategory(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl bg-[#0F1424] border border-white/10 text-xs text-white focus:outline-none focus:border-cyan-400"
+                    className="w-full p-2.5 border-2 border-black bg-white text-black font-mono text-xs focus:outline-none focus:border-b-4 focus:border-black"
                   >
-                    <option value="frontend">Frontend (React, TypeScript, CSS)</option>
+                    <option value="frontend">Frontend (React, TypeScript)</option>
                     <option value="backend">Backend (Python, FastAPI, Go)</option>
                     <option value="database">Database (PostgreSQL, Redis)</option>
-                    <option value="cloud">Cloud & DevOps (Docker, AWS, K8s)</option>
-                    <option value="ai_ml">AI & ML (PyTorch, LangChain)</option>
-                    <option value="soft">System Design & Leadership</option>
+                    <option value="cloud">Cloud & Infra (Docker, AWS, K8s)</option>
+                    <option value="ai_ml">AI & Systems (PyTorch, LLMs)</option>
+                    <option value="soft">Architectural Leadership</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">Proficiency</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Proficiency Tier</label>
                   <select
                     value={newSkillProficiency}
                     onChange={(e) => setNewSkillProficiency(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl bg-[#0F1424] border border-white/10 text-xs text-white focus:outline-none focus:border-cyan-400"
+                    className="w-full p-2.5 border-2 border-black bg-white text-black font-mono text-xs focus:outline-none focus:border-b-4 focus:border-black"
                   >
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
@@ -300,36 +303,36 @@ export default function ProfilePage() {
                   </select>
                 </div>
                 <Button variant="primary" size="sm" onClick={handleAddSkill} leftIcon={<Plus className="w-3.5 h-3.5" />}>
-                  Add Skill
+                  Append Vector
                 </Button>
               </div>
 
               {/* Skills Grid by Category */}
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {['frontend', 'backend', 'database', 'cloud', 'soft'].map((cat) => {
                   const catSkills = skills.filter(s => s.category === cat);
                   if (catSkills.length === 0) return null;
 
                   return (
-                    <div key={cat} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
-                      <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
+                    <div key={cat} className="p-6 border border-black bg-mono-50 space-y-3">
+                      <div className="font-mono text-xs uppercase tracking-widest text-black font-bold border-b border-mono-200 pb-1">
                         {cat.toUpperCase()} ({catSkills.length})
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {catSkills.map((s) => (
                           <div
                             key={s.skill_name}
-                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white font-mono"
+                            className="inline-flex items-center gap-2 px-3 py-1.5 border border-black bg-white text-xs text-black font-mono"
                           >
-                            <span>{s.skill_name}</span>
-                            <span className="text-[10px] text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded">
+                            <span className="font-bold">{s.skill_name}</span>
+                            <span className="text-2xs bg-black text-white px-1.5 py-0.2">
                               {s.proficiency}
                             </span>
                             <button
                               onClick={() => handleRemoveSkill(s.skill_name)}
-                              className="text-slate-500 hover:text-rose-400 transition-colors ml-1"
+                              className="text-mono-400 hover:text-black ml-1"
                             >
-                              <Trash2 className="w-3 h-3" />
+                              <Trash2 className="w-3 h-3" strokeWidth={1.5} />
                             </button>
                           </div>
                         ))}
@@ -338,14 +341,14 @@ export default function ProfilePage() {
                   );
                 })}
               </div>
-            </Card>
+            </div>
           )}
 
           {/* TAB 3: Experience */}
           {activeTab === 'experience' && (
-            <Card className="p-6 space-y-6">
-              <CardHeader>
-                <CardTitle>Professional Experience</CardTitle>
+            <div className="p-8 border-2 border-black bg-white space-y-6">
+              <div className="flex items-center justify-between border-b border-black pb-3">
+                <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black">Professional Engineering Record</h3>
                 <Button
                   size="sm"
                   variant="outline"
@@ -365,15 +368,15 @@ export default function ProfilePage() {
                     ]);
                   }}
                 >
-                  Add Experience
+                  Add Milestone
                 </Button>
-              </CardHeader>
+              </div>
 
               <div className="space-y-6">
                 {experience.map((exp, expIdx) => (
-                  <div key={expIdx} className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-4">
+                  <div key={expIdx} className="p-6 border border-black bg-mono-50 space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 flex-1 mr-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 flex-1 mr-4 font-mono text-xs">
                         <input
                           type="text"
                           value={exp.role}
@@ -383,7 +386,7 @@ export default function ProfilePage() {
                             setExperience(updated);
                           }}
                           placeholder="Role"
-                          className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white font-bold"
+                          className="p-2 border border-black bg-white text-black font-serif font-bold text-sm"
                         />
                         <input
                           type="text"
@@ -394,7 +397,7 @@ export default function ProfilePage() {
                             setExperience(updated);
                           }}
                           placeholder="Company"
-                          className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white"
+                          className="p-2 border border-black bg-white text-black font-body text-xs"
                         />
                         <input
                           type="text"
@@ -405,22 +408,22 @@ export default function ProfilePage() {
                             setExperience(updated);
                           }}
                           placeholder="Dates"
-                          className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white"
+                          className="p-2 border border-black bg-white text-black font-mono text-xs"
                         />
                       </div>
                       <button
                         onClick={() => {
                           setExperience(experience.filter((_, i) => i !== expIdx));
                         }}
-                        className="text-slate-500 hover:text-rose-400 p-1.5"
+                        className="text-mono-400 hover:text-black p-1.5"
                       >
-                        <Trash2 className="w-4 h-4" />
+                        <Trash2 className="w-4 h-4" strokeWidth={1.5} />
                       </button>
                     </div>
 
                     {/* Bullet Points */}
-                    <div className="space-y-2">
-                      <div className="text-xs font-semibold text-slate-300">Key Achievements & Responsibilities:</div>
+                    <div className="space-y-2 font-mono text-xs">
+                      <div className="uppercase tracking-wider font-bold text-mono-700">Verified Technical Deliverables:</div>
                       {exp.bullets.map((bullet, bIdx) => (
                         <div key={bIdx} className="flex items-start gap-2">
                           <textarea
@@ -431,7 +434,7 @@ export default function ProfilePage() {
                               updated[expIdx].bullets[bIdx] = e.target.value;
                               setExperience(updated);
                             }}
-                            className="flex-1 p-2.5 rounded-lg bg-white/[0.03] border border-white/10 text-xs text-slate-200 focus:outline-none focus:border-indigo-500"
+                            className="flex-1 p-3 border border-black bg-white text-black font-body text-xs focus:outline-none focus:border-b-4 focus:border-black"
                           />
                         </div>
                       ))}
@@ -439,14 +442,14 @@ export default function ProfilePage() {
                   </div>
                 ))}
               </div>
-            </Card>
+            </div>
           )}
 
           {/* TAB 4: Education */}
           {activeTab === 'education' && (
-            <Card className="p-6 space-y-6">
-              <CardHeader>
-                <CardTitle>Academic Background</CardTitle>
+            <div className="p-8 border-2 border-black bg-white space-y-6">
+              <div className="flex items-center justify-between border-b border-black pb-3">
+                <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black">Academic Credentials</h3>
                 <Button
                   size="sm"
                   variant="outline"
@@ -466,12 +469,12 @@ export default function ProfilePage() {
                 >
                   Add Degree
                 </Button>
-              </CardHeader>
+              </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 font-mono text-xs">
                 {education.map((edu, eduIdx) => (
-                  <div key={eduIdx} className="p-4 rounded-xl bg-white/[0.02] border border-white/10 space-y-3">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div key={eduIdx} className="p-6 border border-black bg-mono-50 space-y-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <input
                         type="text"
                         value={edu.degree}
@@ -481,7 +484,7 @@ export default function ProfilePage() {
                           setEducation(updated);
                         }}
                         placeholder="Degree"
-                        className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white font-bold"
+                        className="p-2 border border-black bg-white text-black font-serif font-bold text-sm"
                       />
                       <input
                         type="text"
@@ -492,7 +495,7 @@ export default function ProfilePage() {
                           setEducation(updated);
                         }}
                         placeholder="Institution"
-                        className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white"
+                        className="p-2 border border-black bg-white text-black font-body text-xs"
                       />
                       <input
                         type="text"
@@ -503,20 +506,20 @@ export default function ProfilePage() {
                           setEducation(updated);
                         }}
                         placeholder="Year"
-                        className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white"
+                        className="p-2 border border-black bg-white text-black font-mono text-xs"
                       />
                     </div>
                   </div>
                 ))}
               </div>
-            </Card>
+            </div>
           )}
 
           {/* TAB 5: Projects */}
           {activeTab === 'projects' && (
-            <Card className="p-6 space-y-6">
-              <CardHeader>
-                <CardTitle>Highlighted Engineering Projects</CardTitle>
+            <div className="p-8 border-2 border-black bg-white space-y-6">
+              <div className="flex items-center justify-between border-b border-black pb-3">
+                <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black">Architecture & Open-Source Projects</h3>
                 <Button
                   size="sm"
                   variant="outline"
@@ -536,11 +539,11 @@ export default function ProfilePage() {
                 >
                   Add Project
                 </Button>
-              </CardHeader>
+              </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 font-mono text-xs">
                 {projects.map((proj, pIdx) => (
-                  <div key={pIdx} className="p-4 rounded-xl bg-white/[0.02] border border-white/10 space-y-3">
+                  <div key={pIdx} className="p-6 border border-black bg-mono-50 space-y-3">
                     <div className="flex items-center justify-between">
                       <input
                         type="text"
@@ -551,13 +554,13 @@ export default function ProfilePage() {
                           setProjects(updated);
                         }}
                         placeholder="Project Title"
-                        className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white font-bold"
+                        className="p-2 border border-black bg-white text-black font-serif font-bold text-sm"
                       />
                       <button
                         onClick={() => setProjects(projects.filter((_, i) => i !== pIdx))}
-                        className="text-slate-500 hover:text-rose-400 p-1.5"
+                        className="text-mono-400 hover:text-black p-1.5"
                       >
-                        <Trash2 className="w-4 h-4" />
+                        <Trash2 className="w-4 h-4" strokeWidth={1.5} />
                       </button>
                     </div>
                     <textarea
@@ -569,45 +572,46 @@ export default function ProfilePage() {
                         setProjects(updated);
                       }}
                       placeholder="Project description and quantifiable outcomes..."
-                      className="w-full p-2.5 rounded-lg bg-white/[0.03] border border-white/10 text-xs text-white"
+                      className="w-full p-3 border border-black bg-white text-black font-body text-xs focus:outline-none focus:border-b-4 focus:border-black"
                     />
                   </div>
                 ))}
               </div>
-            </Card>
+            </div>
           )}
 
           {/* TAB 6: Salary & Preferences */}
           {activeTab === 'preferences' && (
-            <Card className="p-6 space-y-5">
-              <CardHeader>
-                <CardTitle>Target Compensation & Work Preferences</CardTitle>
-              </CardHeader>
+            <div className="p-8 border-2 border-black bg-white space-y-6">
+              <div className="border-b border-black pb-3">
+                <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black">Target Compensation & Work Bounds</h3>
+              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">Minimum Base Salary ($ USD)</label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-mono text-xs">
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Minimum Base Threshold ($ USD)</label>
                   <input
                     type="number"
                     value={minSalary}
                     onChange={(e) => setMinSalary(Number(e.target.value))}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">Maximum Target Salary ($ USD)</label>
+                <div className="space-y-1.5">
+                  <label className="block uppercase tracking-wider font-bold text-mono-700">Target Upper Boundary ($ USD)</label>
                   <input
                     type="number"
                     value={maxSalary}
                     onChange={(e) => setMaxSalary(Number(e.target.value))}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
                   />
                 </div>
               </div>
-            </Card>
+            </div>
           )}
         </div>
       </main>
     </div>
   );
 }
+

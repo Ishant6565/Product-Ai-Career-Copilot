@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Sparkles, ArrowRight, Lock, Mail, UserCheck, CheckCircle2 } from 'lucide-react';
+import { Lock, Mail, UserCheck, ArrowRight } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
 import { Button } from '@/components/common/Button';
 import { api } from '@/lib/api';
@@ -44,104 +44,103 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#06090F] flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-indigo-600/15 blur-[120px] rounded-full pointer-events-none" />
-
-      <div className="sm:mx-auto sm:w-full sm:max-w-md text-center relative z-10">
-        <Link href="/" className="inline-flex items-center gap-2 group mb-6">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20">
-            <div className="w-full h-full bg-[#0B0F19] rounded-[11px] flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-cyan-400" />
-            </div>
+    <div className="min-h-screen bg-white text-black flex flex-col justify-center py-16 px-6 sm:px-8 lg:px-12 font-body selection:bg-black selection:text-white relative">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-3">
+        <Link href="/" className="inline-flex items-center gap-3 group mb-4">
+          <div className="w-8 h-8 border border-black bg-black text-white flex items-center justify-center font-mono font-bold text-sm transition-colors duration-100 group-hover:bg-white group-hover:text-black">
+            AC
           </div>
-          <span className="font-extrabold text-xl text-white">AI Career Copilot</span>
+          <span className="font-serif font-bold text-xl uppercase tracking-tight text-black">
+            AI CAREER COPILOT
+          </span>
         </Link>
 
-        <h2 className="text-2xl font-extrabold tracking-tight text-white">Welcome back</h2>
-        <p className="text-xs text-slate-400 mt-1">Sign in to your career copilot cockpit</p>
+        <h2 className="font-serif text-3xl sm:text-4xl font-bold uppercase tracking-tight text-black">
+          SIGN IN &bull; DOSSIER
+        </h2>
+        <p className="font-mono text-2xs uppercase tracking-widest text-mono-500">
+          Access your autonomous engineering telemetry
+        </p>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md relative z-10 px-4">
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md space-y-6">
         {/* 1-Click Demo Personas Selector */}
-        <div className="mb-6 p-4 rounded-2xl border border-indigo-500/30 bg-indigo-950/20 backdrop-blur-md space-y-3">
-          <div className="flex items-center justify-between text-xs font-semibold text-cyan-300">
-            <span className="flex items-center gap-1.5 font-mono uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" /> 1-Click Instant Demo Login
-            </span>
+        <div className="border-2 border-black p-6 bg-mono-50 space-y-3">
+          <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-widest font-bold text-black border-b border-black pb-2">
+            <span>Instant Demo Access</span>
+            <span className="bg-black text-white px-2 py-0.5">1-Click</span>
           </div>
-          <p className="text-[11px] text-slate-400">
-            No signup needed. Instantly explore seeded resumes, active job applications, and AI tools:
+          <p className="font-serif text-xs text-mono-600">
+            Instantly load seeded technical resumes, 5 active applications, and calibrated AI tools:
           </p>
 
           <button
             type="button"
             onClick={() => handleDemoPersona('fullstack')}
             disabled={isLoading}
-            className="w-full text-left p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 flex items-center justify-between transition-all group"
+            className="w-full text-left p-4 border border-black bg-white hover:bg-black hover:text-white transition-colors duration-100 flex items-center justify-between group"
           >
             <div>
-              <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">
-                Alex Chen (Full-Stack Engineer)
+              <div className="font-serif font-bold text-sm">
+                Alex Chen &bull; Full-Stack Engineer
               </div>
-              <div className="text-[10px] text-slate-400">
-                3 yrs exp &bull; 92% profile health &bull; 5 active applications
+              <div className="font-mono text-2xs text-mono-500 group-hover:text-mono-400 mt-0.5">
+                3 yrs exp &bull; 95 ATS Score &bull; 5 Pipeline Apps
               </div>
             </div>
-            <UserCheck className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+            <UserCheck className="w-4 h-4 shrink-0" strokeWidth={1.5} />
           </button>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-[#0B0F19]/90 backdrop-blur-md p-6 shadow-2xl space-y-5">
+        {/* Standard Form */}
+        <div className="border-2 border-black bg-white p-8 space-y-6">
           {error && (
-            <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-300">
+            <div className="p-3 border border-black bg-black text-white font-mono text-xs">
               {error}
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Email address</label>
+          <form onSubmit={handleSubmit} className="space-y-5 font-mono text-xs">
+            <div className="space-y-2">
+              <label className="block uppercase tracking-wider font-bold text-mono-700">Email Address</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="alex.chen@example.com"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                  className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm placeholder:italic placeholder:text-mono-400 focus:outline-none focus:border-b-4 focus:border-black"
                 />
               </div>
             </div>
 
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-xs font-medium text-slate-300">Password</label>
-                <a href="#" className="text-[11px] text-indigo-400 hover:text-indigo-300">Forgot password?</a>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <label className="block uppercase tracking-wider font-bold text-mono-700">Password</label>
+                <a href="#" className="text-2xs uppercase text-mono-500 hover:text-black underline">Forgot?</a>
               </div>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                  className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm placeholder:italic placeholder:text-mono-400 focus:outline-none focus:border-b-4 focus:border-black"
                 />
               </div>
             </div>
 
-            <Button type="submit" variant="primary" className="w-full" isLoading={isLoading}>
-              Sign In
+            <Button type="submit" variant="primary" className="w-full py-4 text-xs" isLoading={isLoading} rightIcon={<ArrowRight className="w-4 h-4" />}>
+              Authenticate &rarr;
             </Button>
           </form>
 
-          <div className="pt-2 text-center text-xs text-slate-400">
-            Don&apos;t have an account?{' '}
-            <Link href="/register" className="text-cyan-400 hover:text-cyan-300 font-semibold">
-              Create account
+          <div className="pt-2 text-center font-mono text-2xs uppercase tracking-wider text-mono-500 border-t border-mono-200">
+            Unregistered candidate?{' '}
+            <Link href="/register" className="font-bold text-black underline">
+              Create Dossier
             </Link>
           </div>
         </div>
@@ -149,3 +148,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

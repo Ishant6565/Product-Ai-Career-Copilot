@@ -3,11 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { 
   FileText, UploadCloud, Plus, CheckCircle2, AlertCircle, 
-  Sparkles, Star, Download, Trash2, ArrowUpRight, Wand2, RefreshCw
+  Download, Trash2, Wand2
 } from 'lucide-react';
 import { Sidebar } from '@/components/common/Sidebar';
 import { AppHeader } from '@/components/common/AppHeader';
-import { Card, CardHeader, CardTitle } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { Badge } from '@/components/common/Badge';
 import { Modal } from '@/components/common/Modal';
@@ -86,13 +85,13 @@ export default function ResumesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-row selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-white text-black flex flex-row font-body selection:bg-black selection:text-white">
       <Sidebar />
 
       <main className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         <AppHeader
-          title="Multi-Version Resume Hub"
-          subtitle="ATS scoring, structural audits, and version tracking"
+          title="Resume Intelligence & Vector Audits"
+          subtitle="ATS parsing index, structural telemetry, and multi-version candidate dossiers"
           actionButton={
             <Button
               size="sm"
@@ -100,14 +99,14 @@ export default function ResumesPage() {
               onClick={() => setIsUploadModalOpen(true)}
               leftIcon={<Plus className="w-3.5 h-3.5" />}
             >
-              Upload New Version
+              Upload Dossier Version
             </Button>
           }
         />
 
-        <div className="p-6 space-y-6 max-w-7xl w-full mx-auto">
+        <div className="p-8 space-y-8 max-w-7xl w-full mx-auto">
           {/* Top Version Switcher Tabs */}
-          <div className="flex items-center justify-between gap-4 border-b border-white/5 pb-3">
+          <div className="flex items-center justify-between gap-4 border-b-2 border-black pb-4">
             <div className="flex items-center gap-2 overflow-x-auto">
               {resumes.map((r) => {
                 const isSelected = selectedResume?.id === r.id;
@@ -115,16 +114,16 @@ export default function ResumesPage() {
                   <button
                     key={r.id}
                     onClick={() => setSelectedResume(r)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                    className={`flex items-center gap-2 px-4 py-2.5 font-mono text-xs uppercase tracking-wider font-bold whitespace-nowrap border transition-colors duration-100 ${
                       isSelected
-                        ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/25'
-                        : 'bg-white/[0.03] text-slate-400 hover:text-white hover:bg-white/[0.06] border border-white/5'
+                        ? 'bg-black text-white border-black'
+                        : 'bg-white text-black border-black hover:bg-mono-100'
                     }`}
                   >
-                    <FileText className="w-3.5 h-3.5" />
+                    <FileText className="w-3.5 h-3.5" strokeWidth={1.5} />
                     <span>{r.title}</span>
                     {r.is_primary && (
-                      <span className="text-[9px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-mono">
+                      <span className="text-2xs bg-white text-black px-1.5 py-0.2 border border-black">
                         PRIMARY
                       </span>
                     )}
@@ -137,150 +136,151 @@ export default function ResumesPage() {
               size="sm"
               variant="outline"
               onClick={() => setIsUploadModalOpen(true)}
-              leftIcon={<UploadCloud className="w-3.5 h-3.5" />}
+              leftIcon={<UploadCloud className="w-3.5 h-3.5" strokeWidth={1.5} />}
             >
-              New Version
+              Add Edition
             </Button>
           </div>
 
           {selectedResume && (
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Score Breakdown Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
                 {/* Overall Score Dial */}
-                <Card className="p-5 bg-gradient-to-b from-[#0F1528] to-[#0A0E17] border-indigo-500/30">
-                  <div className="text-xs text-slate-400 font-medium flex items-center justify-between">
-                    <span>Overall Resume Score</span>
-                    <Sparkles className="w-4 h-4 text-cyan-400" />
+                <div className="p-6 border-2 border-black bg-black text-white">
+                  <div className="font-mono text-2xs uppercase tracking-widest text-mono-400 flex items-center justify-between">
+                    <span>Overall Resume Index</span>
                   </div>
-                  <div className="flex items-baseline gap-2 mt-2">
-                    <span className="text-4xl font-extrabold font-mono text-white">{selectedResume.overall_score}</span>
-                    <span className="text-xs text-slate-500">/ 100</span>
+                  <div className="flex items-baseline gap-2 mt-3">
+                    <span className="font-serif text-5xl font-bold text-white">{selectedResume.overall_score}</span>
+                    <span className="font-mono text-xs text-mono-400">/ 100</span>
                   </div>
-                  <div className="text-[11px] text-emerald-400 font-semibold mt-1">
+                  <div className="font-mono text-2xs uppercase tracking-wider text-mono-300 mt-2">
                     Grade A+ (Highly Competitive)
                   </div>
-                </Card>
+                </div>
 
                 {/* ATS Readability */}
-                <Card className="p-5">
-                  <div className="text-xs text-slate-400">ATS Parsing Compatibility</div>
-                  <div className="text-2xl font-bold font-mono text-cyan-300 mt-2">{selectedResume.ats_score}%</div>
-                  <div className="text-[10px] text-slate-400 mt-1">Standard header hierarchy</div>
-                </Card>
+                <div className="p-6 border-2 border-black bg-white text-black">
+                  <div className="font-mono text-2xs uppercase tracking-widest text-mono-500">ATS Parsing Match</div>
+                  <div className="font-serif text-4xl font-bold text-black mt-3">{selectedResume.ats_score}%</div>
+                  <div className="font-mono text-2xs uppercase text-mono-500 mt-2">Standard header hierarchy</div>
+                </div>
 
                 {/* Impact & Action Verbs */}
-                <Card className="p-5">
-                  <div className="text-xs text-slate-400">Impact & Action Verbs</div>
-                  <div className="text-2xl font-bold font-mono text-emerald-300 mt-2">{selectedResume.impact_score}%</div>
-                  <div className="text-[10px] text-slate-400 mt-1">Quantified business metrics</div>
-                </Card>
+                <div className="p-6 border-2 border-black bg-white text-black">
+                  <div className="font-mono text-2xs uppercase tracking-widest text-mono-500">Action Metric Index</div>
+                  <div className="font-serif text-4xl font-bold text-black mt-3">{selectedResume.impact_score}%</div>
+                  <div className="font-mono text-2xs uppercase text-mono-500 mt-2">Quantified outcomes</div>
+                </div>
 
                 {/* Structure Score */}
-                <Card className="p-5">
-                  <div className="text-xs text-slate-400">Structural Flow</div>
-                  <div className="text-2xl font-bold font-mono text-violet-300 mt-2">{selectedResume.structure_score}%</div>
-                  <div className="text-[10px] text-slate-400 mt-1">Clean reverse-chronology</div>
-                </Card>
+                <div className="p-6 border-2 border-black bg-white text-black">
+                  <div className="font-mono text-2xs uppercase tracking-widest text-mono-500">Structural Flow</div>
+                  <div className="font-serif text-4xl font-bold text-black mt-3">{selectedResume.structure_score}%</div>
+                  <div className="font-mono text-2xs uppercase text-mono-500 mt-2">Reverse-chronological</div>
+                </div>
               </div>
 
               {/* Strengths & Weaknesses Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Strengths */}
-                <Card className="p-5 space-y-3 border-emerald-500/20 bg-emerald-950/5">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-emerald-400">
-                      <CheckCircle2 className="w-4 h-4" /> Detected Resume Strengths
-                    </CardTitle>
-                    <Badge variant="emerald" size="sm">{selectedResume.strengths?.length || 4} Verified</Badge>
+                <div className="p-6 border-2 border-black bg-mono-50 space-y-4">
+                  <div className="flex items-center justify-between border-b border-black pb-2">
+                    <h3 className="font-serif text-lg font-bold uppercase tracking-tight text-black flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4" /> Detected Dossier Strengths
+                    </h3>
+                    <Badge variant="solid" size="sm">{selectedResume.strengths?.length || 4} Verified</Badge>
                   </div>
-                  <ul className="space-y-2.5 text-xs text-slate-300">
+                  <ul className="space-y-3 font-serif text-xs text-mono-800">
                     {selectedResume.strengths?.map((str, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-emerald-400 mt-0.5 shrink-0">✓</span>
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="font-mono text-black font-bold mt-0.5 shrink-0">✓</span>
                         <span>{str}</span>
                       </li>
                     ))}
                   </ul>
-                </Card>
+                </div>
 
                 {/* Weaknesses & Missing Keywords */}
-                <Card className="p-5 space-y-3 border-amber-500/20 bg-amber-950/5">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-amber-400">
+                <div className="p-6 border-2 border-black bg-mono-50 space-y-4">
+                  <div className="flex items-center justify-between border-b border-black pb-2">
+                    <h3 className="font-serif text-lg font-bold uppercase tracking-tight text-black flex items-center gap-2">
                       <AlertCircle className="w-4 h-4" /> Recommended ATS Enhancements
-                    </CardTitle>
-                    <Badge variant="amber" size="sm">Action Items</Badge>
+                    </h3>
+                    <Badge variant="outline" size="sm">Action Items</Badge>
                   </div>
-                  <ul className="space-y-2.5 text-xs text-slate-300">
+                  <ul className="space-y-3 font-serif text-xs text-mono-800">
                     {selectedResume.weaknesses?.map((w, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-amber-400 mt-0.5 shrink-0">&bull;</span>
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="font-mono text-black font-bold mt-0.5 shrink-0">&bull;</span>
                         <span>{w}</span>
                       </li>
                     ))}
                   </ul>
 
                   {selectedResume.missing_keywords?.length > 0 && (
-                    <div className="pt-2 border-t border-white/5 space-y-1.5">
-                      <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                    <div className="pt-3 border-t border-mono-200 space-y-2">
+                      <div className="font-mono text-2xs uppercase tracking-widest text-mono-500">
                         High-Demand Missing Keywords:
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {selectedResume.missing_keywords.map((k) => (
-                          <Badge key={k} variant="amber" size="sm">+ {k}</Badge>
+                          <span key={k} className="px-2 py-0.5 bg-black text-white border border-black font-mono text-2xs">+ {k}</span>
                         ))}
                       </div>
                     </div>
                   )}
-                </Card>
+                </div>
               </div>
 
               {/* Actionable AI Fix Suggestions */}
-              <Card className="p-6 space-y-4">
-                <CardHeader>
-                  <CardTitle>
-                    <Wand2 className="w-4 h-4 text-cyan-400" />
-                    AI Bullet Point Improvement Suggestions
-                  </CardTitle>
-                  <span className="text-xs text-slate-400">Zero-hallucination metric rewrites</span>
-                </CardHeader>
+              <div className="p-8 border-2 border-black bg-white space-y-6">
+                <div className="flex items-center justify-between border-b border-black pb-3">
+                  <div>
+                    <h3 className="font-serif text-xl font-bold uppercase tracking-tight text-black flex items-center gap-2">
+                      <Wand2 className="w-4 h-4" />
+                      Zero-Hallucination Bullet Calibration
+                    </h3>
+                    <p className="font-mono text-2xs uppercase tracking-widest text-mono-500 mt-0.5">Automated metric elevation recommendations</p>
+                  </div>
+                </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {selectedResume.improvement_suggestions?.map((item, idx) => (
-                    <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2.5">
+                    <div key={idx} className="p-6 border border-black bg-mono-50 space-y-4">
                       <div className="flex items-center justify-between">
-                        <Badge variant="indigo" size="sm">{item.section}</Badge>
-                        <Badge variant={item.impact === 'High' ? 'rose' : 'amber'} size="sm">
+                        <Badge variant="solid" size="sm">{item.section}</Badge>
+                        <span className="font-mono text-2xs uppercase tracking-wider px-2 py-0.5 border border-black bg-white text-black font-bold">
                           {item.impact} Impact
-                        </Badge>
+                        </span>
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                        <div className="p-3 rounded-lg bg-rose-500/5 border border-rose-500/20 text-slate-300">
-                          <span className="text-[10px] font-mono text-rose-400 uppercase block mb-1 font-bold">Current Wording:</span>
-                          {item.current}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
+                        <div className="p-4 border border-mono-300 bg-white text-mono-700">
+                          <span className="text-2xs uppercase tracking-wider block mb-1 font-bold text-mono-500">Current Wording:</span>
+                          <span className="font-body text-xs">{item.current}</span>
                         </div>
-                        <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20 text-slate-100 font-medium">
-                          <span className="text-[10px] font-mono text-emerald-400 uppercase block mb-1 font-bold">AI Optimized Wording:</span>
-                          {item.suggested}
+                        <div className="p-4 border-2 border-black bg-black text-white font-medium">
+                          <span className="text-2xs uppercase tracking-wider block mb-1 font-bold text-mono-300">Calibrated Wording:</span>
+                          <span className="font-body text-xs text-white">{item.suggested}</span>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
-              </Card>
+              </div>
 
               {/* Version Controls */}
-              <div className="p-4 rounded-2xl border border-white/5 bg-[#090D18] flex items-center justify-between">
+              <div className="p-6 border-2 border-black bg-mono-50 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   {!selectedResume.is_primary && (
                     <Button
                       size="sm"
-                      variant="secondary"
+                      variant="primary"
                       onClick={() => handleSetPrimary(selectedResume.id)}
                     >
-                      Set as Primary Active Resume
+                      Set as Primary Dossier
                     </Button>
                   )}
                   <Button
@@ -306,7 +306,7 @@ export default function ResumesPage() {
                   onClick={() => handleDelete(selectedResume.id)}
                   leftIcon={<Trash2 className="w-3.5 h-3.5" />}
                 >
-                  Delete Version
+                  Delete Edition
                 </Button>
               </div>
             </div>
@@ -318,40 +318,40 @@ export default function ResumesPage() {
       <Modal
         isOpen={isUploadModalOpen}
         onClose={() => setIsUploadModalOpen(false)}
-        title="Upload & Parse New Resume Version"
-        subtitle="Our AI parser extracts skills, computes ATS scores, and audits bullet impact"
+        title="Ingest New Candidate Edition"
+        subtitle="Our parser evaluates telemetry, calculates ATS metrics, and optimizes bullet points"
       >
-        <form onSubmit={handleUpload} className="space-y-4">
-          <div>
-            <label className="block text-xs font-medium text-slate-300 mb-1">Version Title</label>
+        <form onSubmit={handleUpload} className="space-y-5 font-mono text-xs">
+          <div className="space-y-1.5">
+            <label className="block uppercase tracking-wider font-bold text-mono-700">Edition Title</label>
             <input
               type="text"
               required
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
               placeholder="e.g. Backend Go Specialist V2"
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
+              className="w-full p-3 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:border-b-4 focus:border-black"
             />
           </div>
 
-          <div>
-            <label className="block text-xs font-medium text-slate-300 mb-1">Paste Resume Content (or Summary)</label>
+          <div className="space-y-1.5">
+            <label className="block uppercase tracking-wider font-bold text-mono-700">Paste Resume Text / Markdown</label>
             <textarea
-              rows={6}
+              rows={7}
               required
               value={resumeText}
               onChange={(e) => setResumeText(e.target.value)}
-              placeholder="Paste text from your PDF/DOCX resume..."
-              className="w-full p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+              placeholder="Paste raw markdown or text from your engineering resume..."
+              className="w-full p-3.5 border-2 border-black bg-white text-black font-body text-sm placeholder:italic placeholder:text-mono-400 focus:outline-none focus:border-b-4 focus:border-black"
             />
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-3 border-t border-white/5">
+          <div className="flex items-center justify-end gap-3 pt-4 border-t border-mono-200">
             <Button type="button" variant="ghost" size="sm" onClick={() => setIsUploadModalOpen(false)}>
               Cancel
             </Button>
             <Button type="submit" variant="primary" size="sm" isLoading={isUploading}>
-              Parse & Audit Resume
+              Parse & Calibrate Dossier
             </Button>
           </div>
         </form>
@@ -359,3 +359,4 @@ export default function ResumesPage() {
     </div>
   );
 }
+

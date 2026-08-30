@@ -4,63 +4,120 @@
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #FAFAFA;
+    --background: #FFFFFF;
+    --foreground: #000000;
+    --muted: #F5F5F5;
+    --muted-foreground: #525252;
+    --border: #000000;
+    --border-light: #E5E5E5;
+    --accent: #000000;
+    --accent-foreground: #FFFFFF;
+  }
+
+  * {
+    border-radius: 0px !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Inter", -apple-system, sans-serif;
+    font-family: "Source Serif 4", Georgia, serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Georgia, serif;
+    letter-spacing: -0.025em;
   }
 }
 
-/* Minimalist Monochrome Glass Utilities */
-.glass-panel {
-  background: rgba(9, 9, 11, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Texture Pattern Utilities */
+.pattern-horizontal-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    #000000 1px,
+    #000000 2px
+  );
+  background-size: 100% 4px;
 }
 
-.glass-panel-glow {
-  background: rgba(9, 9, 11, 0.85);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 30px -10px rgba(255, 255, 255, 0.05);
+.pattern-grid {
+  background-image:
+    linear-gradient(#0000000d 1px, transparent 1px),
+    linear-gradient(90deg, #0000000d 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-.glass-input {
-  background: rgba(18, 18, 20, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #FAFAFA;
-  transition: all 0.2s ease;
+.pattern-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    #0000000d 40px,
+    #0000000d 42px
+  );
 }
 
-.glass-input:focus {
-  outline: none;
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+.pattern-vertical-white {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 1px,
+    #ffffff 1px,
+    #ffffff 2px
+  );
+  background-size: 4px 100%;
 }
 
-/* Custom Minimal Scrollbars */
+.pattern-radial-white {
+  background-image: radial-gradient(
+    circle at top center,
+    #ffffff,
+    transparent 70%
+  );
+}
+
+/* Boxed Drop Cap for Editorial Text */
+.drop-cap-boxed::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.85;
+  padding: 0.5rem 0.75rem 0.35rem;
+  margin-right: 0.85rem;
+  margin-top: 0.15rem;
+  border: 2px solid #000000;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Custom Sharp Scrollbars */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #F5F5F5;
+  border-left: 1px solid #E5E5E5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
+  background: #000000;
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #333333;
 }
 
 /* Terminal Cursor Blink */
@@ -71,9 +128,27 @@
 
 .terminal-cursor {
   display: inline-block;
-  width: 7px;
+  width: 6px;
   height: 14px;
-  background-color: #FAFAFA;
+  background-color: currentColor;
   vertical-align: middle;
   animation: blink 1s infinite;
 }
+
+/* Instant Hover Inversions & Utilities */
+.hover-invert {
+  transition: background-color 100ms ease, color 100ms ease, border-color 100ms ease;
+}
+
+.hover-invert:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: #000000 !important;
+}
+
+/* Focus Outline for Accessibility */
+*:focus-visible {
+  outline: 3px solid #000000 !important;
+  outline-offset: 3px !important;
+}
+

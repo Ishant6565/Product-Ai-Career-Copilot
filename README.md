@@ -1,48 +1,63 @@
 <div align="center">
 
-# 🚀 AI Career Copilot
-### Production-Grade AI-Powered Career Management & Job Search Intelligence Cockpit
+# 🏛️ AI Career Copilot
+### Autonomous AI Career Management & Technical Dossier Intelligence Cockpit
 
 [![Next.js 15](https://img.shields.io/badge/Next.js_15-App_Router-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-000000?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Design](https://img.shields.io/badge/Design-Minimalist_Monochrome-000000?style=for-the-badge)](https://github.com/Ishant6565/Product-Ai-Career-Copilot)
+[![TypeScript](https://img.shields.io/badge/TypeScript_5-000000?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-000000?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-000000?style=for-the-badge)](LICENSE)
 
 <br />
 
 <p align="center">
-  <strong>An all-in-one AI career intelligence platform that helps software engineers, students, and job seekers manage their complete job-search lifecycle in one place.</strong><br />
-  Multi-Version ATS Resume Scoring • Real-Time Semantic Job Match Index • Zero-Hallucination Bullet Optimizer • Tailored Cover Letter Architect • STAR AI Mock Interview Coach • Dual-View Kanban Pipeline Tracker • Career Search Analytics Funnel
+  <strong>An architectural, high-craft AI career intelligence cockpit designed for software engineers, systems architects, and technical leaders.</strong><br />
+  Multi-Version ATS Audit • Deterministic Cosine Job Matcher • Non-Hallucinatory Bullet Optimizer • Tailored Cover Letter Architect • STAR AI Mock Interview Coach • 6-Stage Kanban Pipeline • Conversion Telemetry Funnel
 </p>
 
 </div>
 
 ---
 
-## 🌟 Key Product Capabilities
+## 🎨 Minimalist Monochrome Aesthetic
 
-### 1. 🎯 Multi-Version Resume Hub & ATS Audit
-- **Deep ATS Auditing**: Calculates overall resume score, ATS parsing compatibility (95%), action verb & impact intensity (88%), and structural hierarchy (94%).
-- **Version Management**: Maintain multiple stack-tailored versions (e.g., *Full-Stack Standard V1*, *Backend AI Specialist V2*, *Frontend & Design Systems V3*).
-- **Keyword & Skill Gap Detection**: Automatically extracts technical skills and flags missing industry keywords required by target employers.
-- **Actionable AI Fix Suggestions**: Side-by-side before/after comparison with 1-click bullet point enhancements.
+AI Career Copilot features a high-craft **Minimalist Monochrome** design system engineered with editorial precision and zero visual clutter:
 
-### 2. 🔍 Semantic Job Discovery & Custom JD Scanner
+- **Editorial Typography Hierarchy**:
+  - **Headlines & Mastheads**: `Playfair Display` serif for oversized, authoritative titles.
+  - **Narrative & Long-Form**: `Source Serif 4` serif for descriptions, executive summaries, and bullet points.
+  - **System Telemetry & Metadata**: `JetBrains Mono` for scores, timestamps, KPIs, tags, and form labels.
+- **Strict Geometric Precision**: Global `0px` border-radius across cards, buttons, badges, modals, tabs, and inputs.
+- **High-Contrast Palette**: Pure `#000000` (Deep Ink Black), `#FFFFFF` (Pure Crisp White), and architectural neutral grays.
+- **Tactile Micro-Interactions**: Instant `100ms` hover color inversions with crisp white text on black background.
+- **Deep Architectural Rules**: 1px–4px solid black framing rules and structured technical data grids.
+
+---
+
+## 🌟 Core Product Capabilities
+
+### 1. 🎯 Multi-Version Resume Registry & ATS Audit
+- **Deep ATS Auditing**: Calculates composite resume scores, ATS structural compatibility, action verb intensity, and ISO hierarchy.
+- **Stack-Specific Versioning**: Maintain dedicated resumes per specialization (*Full-Stack Standard V1*, *Backend Systems V2*, *AI Infrastructure V3*).
+- **Keyword Gap Detection**: Extracts verified technical capabilities and flags missing domain keywords required by target postings.
+- **Side-by-Side Bullet Calibration**: 1-click surgical before/after bullet point optimization with zero hallucination.
+
+### 2. 🔍 Semantic Job Catalog & Vector JD Scanner
 - **Real-Time Match Index**: Weighted algorithm evaluating candidate skills (50%), experience depth (30%), and education alignment (20%).
-- **Multi-Facet Discovery**: Filter by job type (Full-time, Internship, Contract), seniority (Entry, Mid, Senior), remote status, and minimum match score.
-- **Custom JD Scanner**: Paste any raw job description from LinkedIn, Indeed, or company portals to receive instant AI compatibility scoring, matching skills, and missing keyword breakdowns.
+- **Multi-Facet Filtering**: Filter listings by role type, seniority tier, workplace modality (Remote/Hybrid/On-Site), and fit percentage.
+- **Custom JD Vector Scanner**: Paste any raw job description from LinkedIn, Indeed, or internal portals for instant AI match telemetry and gap breakdowns.
 
 ### 3. 🪄 Zero-Hallucination AI Career Studio
-- **Resume Optimization Studio**: Rewrites bullet points using strong active verbs (*Architected*, *Engineered*, *Scaled*) and quantifiable metrics (*P99 latency reduction, active users*) without fabricating fake experience.
-- **Cover Letter Architect**: Generates tailored, non-cliche cover letters matching customizable tones (*Confident & Impact-Driven*, *Technical & Architectural*, *Professional*).
-- **STAR Mock Interview Coach**: Role-specific technical, behavioral, and situational question generator with interactive answer input and real-time STAR evaluation (Situation, Task, Action, Result) with coach tips and polished rewrites.
+- **Surgical Bullet Optimizer**: Upgrades bullet points using strong active verbs (*Architected*, *Engineered*, *Scaled*) and quantifiable metrics (*P99 latency, RPS throughput*) without fabricating false history.
+- **Cover Letter Architect**: Generates tailored, non-cliche cover letters matching customizable tones (*Confident & Impact-Driven*, *Technical & Architectural*, *Formal*).
+- **STAR Mock Interview Coach**: Role-specific technical, behavioral, and situational question generator with real-time STAR evaluation (Situation, Task, Action, Result), coach feedback, and refined answer rewrites.
 
-### 4. 📊 Dual-View Application Tracker & Analytics
-- **Kanban Board & Table View**: 6-stage lifecycle tracking (*Saved*, *Applied*, *Screening*, *Interview*, *Offer*, *Rejected*).
-- **Application Drawer**: Log salary offers, recruiter contacts, interview dates, and follow-up reminders.
-- **Career Search Analytics Funnel**: Real-time velocity charts, interview conversion rates, response rates, and high-ROI skill gap roadmaps.
+### 4. 📊 Dual-View Application Pipeline & Telemetry Funnel
+- **Kanban Board & Table List**: 6-stage lifecycle tracking (*Saved*, *Applied*, *Screening*, *Interview*, *Offer*, *Rejected*).
+- **Opportunity Dossier**: Log salary offers, recruiter notes, interview schedules, and stage transitions.
+- **Career Conversion Funnel**: Track stage velocity, interview conversion ratios, response rates, and actionable skill gap remediation roadmaps.
 
 ---
 
@@ -50,24 +65,22 @@
 
 ```mermaid
 graph TD
-    User([Job Seeker / Candidate]) <--> FE[Next.js 15 App Router + TypeScript + Tailwind CSS]
+    User([Candidate / Engineer]) <--> FE[Next.js 15 App Router + Tailwind CSS]
     
     subgraph Frontend Client
-        FE --> UI[Design System: Cards, Modals, Badges, Tabs, Skeletons, Toasts]
+        FE --> UI[Minimalist Monochrome Components: 0px Radius, Serif & Mono Typography]
         FE --> CorePages[Landing, Dashboard, Resumes, Jobs, Details, Tracker, AI Studio, Analytics, Profile, Settings]
         FE --> ApiClient[Type-Safe API Client with JWT Bearer Auth]
     end
     
     ApiClient <--> BE[FastAPI Python Backend]
     
-    subgraph Backend Architecture
-        BE --> Auth[JWT Auth & Password Security]
-        BE --> Routers[Users, Resumes, Jobs, Applications, Analytics, AI Tools]
+    subgraph Backend Engine
+        BE --> Auth[JWT Auth & Bcrypt Security]
+        BE --> Routers[Auth, Profile, Resumes, Jobs, Applications, Analytics, AI Tools]
         BE --> AIService[AI Copilot Layer]
-        AIService --> LLMAdapter[Gemini / OpenAI / Deterministic Engine]
-        BE --> DB[(PostgreSQL + pgvector / SQLite Fallback)]
-        BE --> RedisCache[(Redis Cache & Queue)]
-        BE --> LocalStorage[Encrypted File Storage]
+        AIService --> LLMAdapter[Gemini 2.5 Flash / Deterministic Offline Engine]
+        BE --> DB[(SQLite Database / PostgreSQL + pgvector)]
     end
 ```
 
@@ -78,80 +91,87 @@ graph TD
 ### Prerequisites
 - **Node.js**: v18.0+ (v20+ recommended)
 - **Python**: 3.10+ (3.13 supported)
-- **Docker & Docker Compose** (Optional for containerized run)
 
-### Option A: Local Development (Fastest, Zero-Setup)
+---
 
-#### 1. Clone & Configure Environment
+### Step 1: Clone Repository & Configure Environment
+
 ```bash
-git clone https://github.com/Ishant6565/Genai-Study-Copilot.git
-cd Genai-Study-Copilot
+git clone https://github.com/Ishant6565/Product-Ai-Career-Copilot.git
+cd Product-Ai-Career-Copilot
 
-# Copy environment settings
+# Create environment configuration
 cp .env.example .env
 ```
 
-#### 2. Start the Backend API (FastAPI)
-```bash
-# In project root:
-python -m pip install -r backend/requirements.txt
-uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port 8000 --reload
-```
-*The backend will automatically initialize and seed demo accounts, curated tech jobs, and resume versions.*
+---
 
-#### 3. Start the Frontend (Next.js)
+### Step 2: Start the Backend API (FastAPI)
+
 ```bash
+# Install backend dependencies:
+python -m pip install -r backend/requirements.txt
+
+# Start FastAPI server on port 8000:
+python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000 --reload
+```
+> *The backend automatically initializes and seeds candidate dossiers, curated tech listings, and multi-version ATS resumes.*
+
+---
+
+### Step 3: Start the Frontend Client (Next.js 15)
+
+```bash
+# In a new terminal window:
 cd frontend
 npm install
 npm run dev
 ```
 
-#### 4. Open in Browser
+---
+
+### Step 4: Access in Browser
+
 - **Frontend App**: [http://localhost:3000](http://localhost:3000)
-- **Interactive API Swagger Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
-- **API Health Check**: [http://localhost:8000/health](http://localhost:8000/health)
+- **Interactive API Swagger Docs**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **API Health Check**: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
 
 ---
 
-### Option B: Docker Compose (Full Stack with PostgreSQL & Redis)
+## 🔑 1-Click Instant Demo Personas
 
-```bash
-docker-compose up --build
-```
-This boots 4 containers:
-1. `career_copilot_frontend`: Next.js on port 3000
-2. `career_copilot_backend`: FastAPI on port 8000
-3. `career_copilot_postgres`: PostgreSQL with `pgvector` on port 5432
-4. `career_copilot_redis`: Redis 7 on port 6379
+For instant exploration without manual registration, the Login page includes 1-click persona launchers:
+
+| Persona | Role | Seeded Profile Data |
+|---|---|---|
+| **Alex Chen** | Full-Stack Software Engineer | ATS Score 95/100 • 5 Active Applications (Stripe, Linear, Perplexity AI, Anthropic, Vercel) |
+| **Sarah Jenkins** | Senior AI/ML Systems Engineer | ATS Score 98/100 • Seeded PyTorch / LLM Infrastructure Projects |
+| **Marcus Vance** | Principal Product Architect | ATS Score 94/100 • Product telemetry & system metrics |
 
 ---
 
-## 🧪 Automated Testing
+## 🧪 Automated Testing & Verification
 
-Run the comprehensive backend test suite verifying authentication, profile creation, semantic job matching, and AI tools:
+Run the comprehensive backend and frontend test suites:
 
 ```bash
+# Run Backend Test Suite:
 $env:PYTHONPATH="backend"; pytest backend/tests -v
+
+# Run Frontend Production Build Validation:
+cd frontend
+npm run build
 ```
-
----
-
-## 🔑 1-Click Demo Profiles
-
-For instant testing and evaluation without manual registration, the Login page includes 1-click demo access:
-- **Demo User**: Alex Chen (`alex.chen@example.com` / `password123`)
-  - Target Role: Mid-Level Full-Stack Software Engineer
-  - Seeded Resumes: ATS Score 95/100
-  - Applications: 5 active tracking stages across Stripe, Linear, Perplexity AI, Anthropic, and Vercel.
 
 ---
 
 ## 🛡️ Security & Privacy
-- Zero plaintext passwords (all hashed using `bcrypt` with unique salts).
-- Stateless JWT tokens (`HS256`) with configurable expiration.
-- Zero data hallucination guarantee: AI recommendations only enhance existing candidate data.
+- **Stateless JWT Tokens**: Industry-standard `HS256` signed bearer tokens.
+- **Cryptographic Password Hashing**: Passwords secured via `bcrypt` with unique salts.
+- **Zero Generative Hallucination**: AI algorithms augment existing verified engineering accomplishments without fabricating experience.
 
 ---
 
 ## 📄 License
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and licensed under the [MIT License](LICENSE).
+

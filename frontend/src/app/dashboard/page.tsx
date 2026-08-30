@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
-  Sparkles, ArrowRight, Briefcase, FileText, Kanban, 
-  Wand2, BarChart3, Plus, TrendingUp, CheckCircle2, 
-  Clock, AlertCircle, Bookmark, Compass, ExternalLink
+  ArrowRight, Briefcase, FileText, Kanban, 
+  Wand2, BarChart3, Plus, TrendingUp,
+  Clock, AlertCircle, Bookmark, Compass
 } from 'lucide-react';
 import { Sidebar } from '@/components/common/Sidebar';
 import { AppHeader } from '@/components/common/AppHeader';
@@ -52,227 +52,222 @@ export default function DashboardPage() {
   const profileCompletion = profile?.profile_completion || 92;
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-row selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-white text-black flex flex-row font-body selection:bg-black selection:text-white">
       <Sidebar />
 
       <main className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         <AppHeader 
-          title="Career Command Center" 
-          subtitle={`Welcome back, ${user?.full_name || 'Alex'} • High-fit roles and application velocity`}
+          title="Command Center" 
+          subtitle={`Candidate: ${user?.full_name || 'Alex Chen'} • Dossier Status: Active • Target: ${profile?.target_role || 'Full-Stack Engineer'}`}
           actionButton={
             <Link href="/jobs">
               <Button size="sm" variant="primary" leftIcon={<Briefcase className="w-3.5 h-3.5" />}>
-                Discover Jobs
+                Discover Roles
               </Button>
             </Link>
           }
         />
 
-        <div className="p-6 space-y-6 max-w-7xl w-full mx-auto">
-          {/* Top Metric Cards */}
+        <div className="p-8 space-y-8 max-w-7xl w-full mx-auto">
+          {/* Top Metric Cards - Sharp Monochrome Architectural Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Total Applications */}
-            <Card className="p-4 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="flex items-center justify-between text-xs text-slate-400">
-                <span>Total Applications</span>
-                <Kanban className="w-4 h-4 text-indigo-400" />
+            <div className="p-5 border border-black bg-white space-y-2">
+              <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-widest text-mono-500">
+                <span>Active Pipeline</span>
+                <Kanban className="w-3.5 h-3.5" strokeWidth={1.5} />
               </div>
-              <div className="text-2xl font-bold font-mono text-white mt-2">
+              <div className="font-serif text-3xl font-bold text-black">
                 {applications.length || 5}
               </div>
-              <div className="text-[11px] text-emerald-400 mt-1 flex items-center gap-1">
+              <div className="font-mono text-2xs uppercase text-mono-600 flex items-center gap-1">
                 <TrendingUp className="w-3 h-3" /> +2 this week
               </div>
-            </Card>
+            </div>
 
             {/* Interviews Scheduled */}
-            <Card className="p-4 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="flex items-center justify-between text-xs text-slate-400">
+            <div className="p-5 border border-black bg-white space-y-2">
+              <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-widest text-mono-500">
                 <span>Interviews</span>
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <Clock className="w-3.5 h-3.5" strokeWidth={1.5} />
               </div>
-              <div className="text-2xl font-bold font-mono text-cyan-300 mt-2">
+              <div className="font-serif text-3xl font-bold text-black">
                 {applications.filter(a => a.status === 'interview' || a.status === 'offer').length || 2}
               </div>
-              <div className="text-[11px] text-slate-400 mt-1">
+              <div className="font-mono text-2xs uppercase text-mono-600">
                 Stripe &bull; Linear
               </div>
-            </Card>
+            </div>
 
             {/* Offers Received */}
-            <Card className="p-4 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="flex items-center justify-between text-xs text-slate-400">
+            <div className="p-5 border-2 border-black bg-black text-white space-y-2">
+              <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-widest text-mono-400">
                 <span>Offers</span>
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span className="font-mono font-bold text-white text-xs">&bull;</span>
               </div>
-              <div className="text-2xl font-bold font-mono text-emerald-400 mt-2">
+              <div className="font-serif text-3xl font-bold text-white">
                 {applications.filter(a => a.status === 'offer').length || 1}
               </div>
-              <div className="text-[11px] text-emerald-400 mt-1">
-                Perplexity AI ($160k)
+              <div className="font-mono text-2xs uppercase text-mono-300">
+                Perplexity AI ($210k)
               </div>
-            </Card>
+            </div>
 
             {/* Average Job Match */}
-            <Card className="p-4 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="flex items-center justify-between text-xs text-slate-400">
+            <div className="p-5 border border-black bg-white space-y-2">
+              <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-widest text-mono-500">
                 <span>Avg Match Index</span>
-                <BarChart3 className="w-4 h-4 text-violet-400" />
+                <BarChart3 className="w-3.5 h-3.5" strokeWidth={1.5} />
               </div>
-              <div className="text-2xl font-bold font-mono text-violet-300 mt-2">
+              <div className="font-serif text-3xl font-bold text-black">
                 {analytics?.average_match_score || 91}%
               </div>
-              <div className="text-[11px] text-slate-400 mt-1">
-                Top 8% candidate fit
+              <div className="font-mono text-2xs uppercase text-mono-600">
+                Top 8% Candidate Fit
               </div>
-            </Card>
+            </div>
 
             {/* Resume ATS Score */}
-            <Card className="p-4 bg-gradient-to-b from-[#0F1424] to-[#0A0E17]">
-              <div className="flex items-center justify-between text-xs text-slate-400">
-                <span>Resume ATS Score</span>
-                <FileText className="w-4 h-4 text-emerald-400" />
+            <div className="p-5 border border-black bg-white space-y-2">
+              <div className="flex items-center justify-between font-mono text-2xs uppercase tracking-widest text-mono-500">
+                <span>ATS Pass Score</span>
+                <FileText className="w-3.5 h-3.5" strokeWidth={1.5} />
               </div>
-              <div className="text-2xl font-bold font-mono text-emerald-300 mt-2">
-                {resumeScore} <span className="text-xs text-slate-500 font-normal">/ 100</span>
+              <div className="font-serif text-3xl font-bold text-black">
+                {resumeScore} <span className="font-mono text-xs text-mono-400 font-normal">/ 100</span>
               </div>
-              <div className="text-[11px] text-slate-400 mt-1">
-                ATS Pass Grade A+
+              <div className="font-mono text-2xs uppercase text-mono-600">
+                Grade: Alpha ISO
               </div>
-            </Card>
+            </div>
           </div>
 
           {/* Quick Actions Launchpad */}
-          <div className="p-4 rounded-2xl border border-white/10 bg-[#090D18] flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-xs font-semibold text-white">
-              <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span>AI Quick Actions:</span>
+          <div className="p-6 border-2 border-black bg-mono-50 flex flex-wrap items-center justify-between gap-4">
+            <div className="font-mono text-xs uppercase tracking-widest font-bold text-black flex items-center gap-2">
+              <span className="w-2 h-2 bg-black inline-block" />
+              <span>Surgical Workflows:</span>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               <Link href="/ai-tools?tab=optimize">
-                <Button size="sm" variant="secondary" leftIcon={<Wand2 className="w-3.5 h-3.5 text-indigo-400" />}>
+                <Button size="sm" variant="secondary" leftIcon={<Wand2 className="w-3.5 h-3.5" />}>
                   Optimize Resume for JD
                 </Button>
               </Link>
               <Link href="/ai-tools?tab=cover-letter">
-                <Button size="sm" variant="secondary" leftIcon={<FileText className="w-3.5 h-3.5 text-cyan-400" />}>
-                  Generate Cover Letter
+                <Button size="sm" variant="secondary" leftIcon={<FileText className="w-3.5 h-3.5" />}>
+                  Synthesize Cover Letter
                 </Button>
               </Link>
               <Link href="/ai-tools?tab=interview">
-                <Button size="sm" variant="secondary" leftIcon={<Sparkles className="w-3.5 h-3.5 text-emerald-400" />}>
-                  Start STAR Mock Interview
+                <Button size="sm" variant="secondary" leftIcon={<Compass className="w-3.5 h-3.5" />}>
+                  STAR Mock Interview
                 </Button>
               </Link>
               <Link href="/resumes">
                 <Button size="sm" variant="outline" leftIcon={<Plus className="w-3.5 h-3.5" />}>
-                  Upload Resume
+                  Upload Resume Variant
                 </Button>
               </Link>
             </div>
           </div>
 
           {/* Main Grid: Recommended Jobs & Pipeline */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Column: Top Recommended Jobs (7 cols) */}
-            <div className="lg:col-span-7 space-y-4">
-              <div className="flex items-center justify-between">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex items-center justify-between border-b border-black pb-3">
                 <div>
-                  <h2 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Briefcase className="w-4 h-4 text-indigo-400" />
-                    Recommended Roles For You
+                  <h2 className="font-serif text-xl font-bold text-black uppercase tracking-tight flex items-center gap-2">
+                    Curated Opportunities
                   </h2>
-                  <p className="text-xs text-slate-400">Ranked by semantic match against your skills</p>
+                  <p className="font-serif text-xs text-mono-500">Vector-ranked cosine compatibility against your verified dossier</p>
                 </div>
-                <Link href="/jobs" className="text-xs text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1">
-                  View all ({jobs.length}) <ArrowRight className="w-3.5 h-3.5" />
+                <Link href="/jobs" className="font-mono text-xs uppercase font-bold text-black hover:underline flex items-center gap-1">
+                  View All ({jobs.length}) <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {jobs.slice(0, 3).map((job) => (
-                  <Card key={job.id} interactive className="p-4 space-y-3">
-                    <div className="flex items-start justify-between gap-3">
+                  <div key={job.id} className="p-6 border border-black bg-white space-y-4 hover:border-2 transition-all">
+                    <div className="flex items-start justify-between gap-4">
                       <div>
-                        <div className="flex items-center gap-2">
-                          <Link href={`/jobs/${job.id}`} className="text-sm font-bold text-white hover:text-cyan-300 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <Link href={`/jobs/${job.id}`} className="font-serif text-lg font-bold text-black hover:underline">
                             {job.title}
                           </Link>
-                          {job.is_featured && <Badge variant="indigo" size="sm">Featured</Badge>}
+                          {job.is_featured && <Badge variant="solid" size="sm">Featured</Badge>}
                         </div>
-                        <div className="text-xs text-slate-400 mt-0.5">
-                          {job.company} &bull; {job.location} &bull; <span className="text-slate-300 font-mono">{job.salary_range}</span>
+                        <div className="font-mono text-xs text-mono-600 mt-1">
+                          {job.company} • {job.location} • <span className="font-bold text-black">{job.salary_range}</span>
                         </div>
                       </div>
 
                       <div className="text-right shrink-0">
-                        <Badge variant={(job.match_score || 85) >= 90 ? 'emerald' : 'indigo'} size="sm">
+                        <Badge variant="solid" size="md">
                           {job.match_score || 85}% Match
                         </Badge>
                       </div>
                     </div>
 
                     {/* Matching vs Missing Skills */}
-                    <div className="flex flex-wrap gap-1.5 pt-1">
+                    <div className="flex flex-wrap gap-2 pt-1 font-mono text-2xs">
                       {job.required_skills?.slice(0, 4).map((s) => (
-                        <span key={s} className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono">
+                        <span key={s} className="px-2.5 py-1 bg-mono-100 border border-mono-300 text-black">
                           ✓ {s}
                         </span>
                       ))}
                       {job.missing_skills?.slice(0, 2).map((s) => (
-                        <span key={s} className="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 font-mono">
+                        <span key={s} className="px-2.5 py-1 bg-black text-white border border-black">
                           + {s}
                         </span>
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between pt-2 border-t border-white/5 text-xs">
-                      <span className="text-[11px] text-slate-500">Posted recently</span>
+                    <div className="flex items-center justify-between pt-4 border-t border-mono-200 text-xs">
+                      <span className="font-mono text-2xs text-mono-400 uppercase">Telemetry: Active Listing</span>
                       <div className="flex items-center gap-2">
                         <Link href={`/ai-tools?tab=optimize&job_id=${job.id}`}>
-                          <Button size="sm" variant="ghost" className="text-[11px] h-7 px-2">
-                            Optimize Resume
+                          <Button size="sm" variant="ghost">
+                            Calibrate Resume
                           </Button>
                         </Link>
                         <Link href={`/jobs/${job.id}`}>
-                          <Button size="sm" variant="secondary" className="text-[11px] h-7 px-2.5">
-                            View Role
+                          <Button size="sm" variant="secondary">
+                            View Dossier &rarr;
                           </Button>
                         </Link>
                       </div>
                     </div>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Right Column: Active Applications Pipeline & Skill Gaps (5 cols) */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-5 space-y-8">
               {/* Active Pipeline Box */}
-              <Card className="p-5 space-y-4">
-                <CardHeader className="pb-2">
-                  <CardTitle>
-                    <Kanban className="w-4 h-4 text-cyan-400" />
+              <div className="border border-black p-6 bg-white space-y-4">
+                <div className="flex items-center justify-between border-b border-black pb-3">
+                  <h3 className="font-serif text-lg font-bold text-black uppercase tracking-tight flex items-center gap-2">
+                    <Kanban className="w-4 h-4" strokeWidth={1.5} />
                     Active Applications Pipeline
-                  </CardTitle>
-                  <Link href="/tracker" className="text-xs text-indigo-400 hover:text-indigo-300">
-                    Open Kanban &rarr;
+                  </h3>
+                  <Link href="/tracker" className="font-mono text-2xs uppercase font-bold text-black hover:underline">
+                    Kanban Board &rarr;
                   </Link>
-                </CardHeader>
+                </div>
 
-                <div className="space-y-2.5">
+                <div className="space-y-3 font-mono">
                   {applications.slice(0, 4).map((app) => (
-                    <div key={app.id} className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] flex items-center justify-between">
+                    <div key={app.id} className="p-3.5 border border-mono-300 bg-mono-50 flex items-center justify-between">
                       <div>
-                        <div className="text-xs font-bold text-white">{app.company_name}</div>
-                        <div className="text-[10px] text-slate-400">{app.job_title}</div>
+                        <div className="text-xs font-bold text-black">{app.company_name}</div>
+                        <div className="text-2xs text-mono-500">{app.job_title}</div>
                       </div>
                       <Badge 
-                        variant={
-                          app.status === 'offer' ? 'emerald' :
-                          app.status === 'interview' ? 'indigo' :
-                          app.status === 'screening' ? 'cyan' : 'slate'
-                        }
+                        variant={app.status === 'offer' || app.status === 'interview' ? 'solid' : 'default'}
                         size="sm"
                       >
                         {app.status.toUpperCase()}
@@ -280,38 +275,38 @@ export default function DashboardPage() {
                     </div>
                   ))}
                 </div>
-              </Card>
+              </div>
 
               {/* High-Impact Skill Gaps */}
-              <Card className="p-5 space-y-3 border-amber-500/20 bg-amber-950/10">
-                <div className="flex items-center justify-between">
-                  <div className="text-xs font-bold text-amber-300 flex items-center gap-1.5 font-mono uppercase tracking-wider">
-                    <AlertCircle className="w-4 h-4 text-amber-400" /> High-Impact Skill Gaps
+              <div className="border-2 border-black p-6 bg-mono-50 space-y-4">
+                <div className="flex items-center justify-between border-b border-black pb-3">
+                  <div className="font-mono text-xs font-bold text-black flex items-center gap-2 uppercase tracking-wider">
+                    <AlertCircle className="w-4 h-4" strokeWidth={1.5} /> High-Impact Skill Gaps
                   </div>
-                  <Badge variant="amber" size="sm">3 Identified</Badge>
+                  <Badge variant="solid" size="sm">3 Gaps</Badge>
                 </div>
-                <p className="text-xs text-slate-400">
-                  Adding these skills would unlock <strong>+14% higher average job matches</strong> across your target companies:
+                <p className="font-serif text-xs text-mono-700 leading-relaxed">
+                  Calibrating for these missing capabilities unlocks an estimated <strong>+14% higher vector compatibility</strong> across saved tech portfolios:
                 </p>
 
-                <div className="space-y-2 pt-1">
-                  <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-between text-xs">
+                <div className="space-y-2.5 pt-1 font-mono">
+                  <div className="p-3 border border-black bg-white flex items-center justify-between text-xs">
                     <div>
-                      <span className="font-semibold text-white">Kubernetes / K8s</span>
-                      <span className="text-[10px] text-slate-400 ml-2">Appears in 4 saved roles</span>
+                      <span className="font-bold text-black">Kubernetes / K8s</span>
+                      <span className="text-2xs text-mono-500 ml-2">(4 Saved JDs)</span>
                     </div>
-                    <span className="text-[10px] font-mono text-amber-300">~12h learning</span>
+                    <span className="text-2xs uppercase bg-black text-white px-2 py-0.5 font-bold">~12h</span>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-between text-xs">
+                  <div className="p-3 border border-black bg-white flex items-center justify-between text-xs">
                     <div>
-                      <span className="font-semibold text-white">Apache Kafka Streams</span>
-                      <span className="text-[10px] text-slate-400 ml-2">Appears in 3 saved roles</span>
+                      <span className="font-bold text-black">Apache Kafka Streams</span>
+                      <span className="text-2xs text-mono-500 ml-2">(3 Saved JDs)</span>
                     </div>
-                    <span className="text-[10px] font-mono text-amber-300">~8h learning</span>
+                    <span className="text-2xs uppercase bg-black text-white px-2 py-0.5 font-bold">~8h</span>
                   </div>
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>
@@ -319,3 +314,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
