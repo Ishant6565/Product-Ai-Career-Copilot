@@ -62,6 +62,30 @@ AI Career Copilot breaks away from generic SaaS aesthetics, adopting a bespoke *
 
 ---
 
+## 🖼️ Application Interface Gallery
+
+### 1. Executive Command Center Dashboard
+> Real-time pipeline velocity, active interview telemetry, composite ATS score dials, and curated vector-matched opportunities.
+
+![Command Center Dashboard](docs/images/dashboard-monochrome.png)
+
+---
+
+### 2. AI Career Studio & Surgical Calibration Workbench
+> Job-specific non-hallucinatory bullet point calibration, before/after telemetry scoring (84% → 96%), and executive summary generation.
+
+![AI Career Studio](docs/images/ai-studio-monochrome.png)
+
+---
+
+### 3. Candidate Dossier & 1-Click Authentication Portal
+> Instant 1-click persona switching (Alex Chen, Sarah Jenkins, Marcus Vance) with bottom-bordered mono inputs and high-contrast styling.
+
+![Candidate Sign-In Dossier](docs/images/auth-dossier-monochrome.png)
+
+
+---
+
 ## 🌟 Key Feature Modules
 
 ### 1. 🎯 Multi-Version Resume Registry & ATS Audit
