@@ -45,5 +45,7 @@ infraops/
 mlpulse/
 sagaflow/
 tenantflow/
+spotify-terraform-devops/
+backend/storage_data/
 .agents/
 

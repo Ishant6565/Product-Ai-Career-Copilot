@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AuthProvider } from "@/lib/auth-context";
 
 export const metadata: Metadata = {
-  title: "MyAppMyWeb — Autonomous Multi-Agent SWE Platform",
-  description: "Autonomous software development platform powered by LangGraph, Docker sandboxes, and self-healing test loops.",
+  title: "AI Career Copilot — AI-Powered Job Search Cockpit",
+  description: "Next-generation career intelligence platform: multi-version ATS resume scoring, semantic job matching, zero-hallucination bullet optimization, and Kanban application tracking.",
 };
 
 export default function RootLayout({
@@ -22,7 +23,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen bg-[#070A0F] text-slate-100 selection:bg-indigo-500/30 selection:text-indigo-200">
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

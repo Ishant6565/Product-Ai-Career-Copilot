@@ -1,292 +1,157 @@
 <div align="center">
 
-# 🤖 MyAppMyWeb (DevAgent AI)
-### Autonomous Multi-Agent Software Development & Self-Healing Platform
+# 🚀 AI Career Copilot
+### Production-Grade AI-Powered Career Management & Job Search Intelligence Cockpit
 
-[![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-000000?style=for-the-badge&logo=python&logoColor=white)](https://langchain-ai.github.io/langgraph/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-000000?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Docker](https://img.shields.io/badge/Docker-Sandboxed_Harness-000000?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Next.js 15](https://img.shields.io/badge/Next.js_15-App_Router-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Security](https://img.shields.io/badge/Security-Policy_Enforced-000000?style=for-the-badge&logo=shield&logoColor=white)](SECURITY.md)
-[![License](https://img.shields.io/badge/License-MIT-000000?style=for-the-badge)](LICENSE)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 <br />
 
 <p align="center">
-  <strong>A state-of-the-art autonomous software engineering platform that transforms natural language prompts into production-grade, tested, and self-healed full-stack codebases.</strong><br />
-  Multi-Agent LangGraph DAG • Ephemeral Docker Code Sandboxing • Automated Jest/Supertest/Pytest Harnesses • Real-Time Self-Healing Feedback Loops • Interactive Live App Preview • 1-Click GitHub & ZIP Export
-</p>
-
-<p align="center">
-  <a href="#-ui-command-center-showcase">UI Showcase</a> •
-  <a href="#-key-capabilities--workflow">Key Capabilities</a> •
-  <a href="#-system-architecture">Architecture</a> •
-  <a href="#-security-architecture--sandbox-boundaries">Security & Sandboxing</a> •
-  <a href="#-quick-start-guide">Quick Start</a> •
-  <a href="#-api-reference">API Reference</a> •
-  <a href="#-author">Author</a>
+  <strong>An all-in-one AI career intelligence platform that helps software engineers, students, and job seekers manage their complete job-search lifecycle in one place.</strong><br />
+  Multi-Version ATS Resume Scoring • Real-Time Semantic Job Match Index • Zero-Hallucination Bullet Optimizer • Tailored Cover Letter Architect • STAR AI Mock Interview Coach • Dual-View Kanban Pipeline Tracker • Career Search Analytics Funnel
 </p>
 
 </div>
 
 ---
 
-## 🖥️ UI Command Center Showcase
+## 🌟 Key Product Capabilities
 
-<div align="center">
+### 1. 🎯 Multi-Version Resume Hub & ATS Audit
+- **Deep ATS Auditing**: Calculates overall resume score, ATS parsing compatibility (95%), action verb & impact intensity (88%), and structural hierarchy (94%).
+- **Version Management**: Maintain multiple stack-tailored versions (e.g., *Full-Stack Standard V1*, *Backend AI Specialist V2*, *Frontend & Design Systems V3*).
+- **Keyword & Skill Gap Detection**: Automatically extracts technical skills and flags missing industry keywords required by target employers.
+- **Actionable AI Fix Suggestions**: Side-by-side before/after comparison with 1-click bullet point enhancements.
 
-### 1. Master Command Center & Multi-Agent LangGraph DAG
-*Autonomous SWE Prompt Engine with presets, visual 5-Agent DAG pipeline, 9-stage task checklist, and multi-file code viewer.*
+### 2. 🔍 Semantic Job Discovery & Custom JD Scanner
+- **Real-Time Match Index**: Weighted algorithm evaluating candidate skills (50%), experience depth (30%), and education alignment (20%).
+- **Multi-Facet Discovery**: Filter by job type (Full-time, Internship, Contract), seniority (Entry, Mid, Senior), remote status, and minimum match score.
+- **Custom JD Scanner**: Paste any raw job description from LinkedIn, Indeed, or company portals to receive instant AI compatibility scoring, matching skills, and missing keyword breakdowns.
 
-![Master Command Center & Multi-Agent DAG](docs/images/dashboard-overview.png)
+### 3. 🪄 Zero-Hallucination AI Career Studio
+- **Resume Optimization Studio**: Rewrites bullet points using strong active verbs (*Architected*, *Engineered*, *Scaled*) and quantifiable metrics (*P99 latency reduction, active users*) without fabricating fake experience.
+- **Cover Letter Architect**: Generates tailored, non-cliche cover letters matching customizable tones (*Confident & Impact-Driven*, *Technical & Architectural*, *Professional*).
+- **STAR Mock Interview Coach**: Role-specific technical, behavioral, and situational question generator with interactive answer input and real-time STAR evaluation (Situation, Task, Action, Result) with coach tips and polished rewrites.
 
-<br />
-
-### 2. Ephemeral Docker Sandbox Stream & Autonomous Self-Healing Loop
-*Real-time containerized test execution catching assertion errors and automatically triggering developer agent self-healing loops.*
-
-![Docker Sandbox Stream & Self-Healing](docs/images/docker-stream-self-healing.png)
-
-<br />
-
-### 3. Interactive Live App Preview Sandbox
-*Instant live application sandbox with responsive device switcher (Desktop, Tablet, Mobile), theme toggle, and interactive state.*
-
-![Interactive Live App Preview](docs/images/live-app-preview.png)
-
-<br />
-
-### 4. 1-Click Export & Direct Push to GitHub Integration
-*Publish generated full-stack repositories directly to GitHub with automated manifests or download complete ZIP bundles.*
-
-![Direct GitHub Export Modal](docs/images/github-export-modal.png)
-
-</div>
-
----
-
-## 🌟 Key Capabilities & Workflow
-
-### 1. 🧠 Multi-Agent Orchestration (LangGraph State Machine)
-Unlike naive single-prompt code generators, **MyAppMyWeb** orchestrates **5 specialized autonomous agents** connected in a stateful execution graph:
-
-```text
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│  👑 Manager     │ ──► │  💻 Developer    │ ──► │  🧪 Tester      │ ──► │  🛡️ Reviewer     │ ──► │  📝 Doc Agent    │
-│  Spec & Task DAG│     │  Code Synthesis  │     │  Docker Sandbox │     │  Security & AST  │     │  README & OpenAPI│
-└─────────────────┘     └──────────────────┘     └─────────────────┘     └──────────────────┘     └──────────────────┘
-                               ▲                          │
-                               └────── Failing Trace ─────┘
-                                    (Self-Healing Loop)
-```
-
-| Agent | Responsibility | Core Deliverables |
-| :--- | :--- | :--- |
-| **👑 Manager Agent** | Natural Language Spec Decomposition | Technical Architecture, Tech Stack Selection, and 9-Stage Task Execution DAG |
-| **💻 Developer Agent** | Full-Stack Multi-File Synthesis | 15+ Source Files across Frontend (React/Next.js) & Backend (Express/FastAPI/MongoDB) |
-| **🧪 Tester Agent** | Automated Test Generation & Sandboxing | Unit & Integration Test Suites (Jest, Supertest, Pytest) executed in Docker |
-| **🔄 Self-Healing Router**| Failure Trace Inspection & Auto-Correction | Real-time AST error diagnosis and Before/After Git Diff patches |
-| **🛡️ Reviewer Agent** | Static Code Analysis & Security Audit | Grade A+ (96/100) Quality Scorecard, OWASP Top 10 compliance check |
-| **📝 Doc Agent** | Production-Ready Documentation | Comprehensive README, API documentation, and OpenAPI 3.0 specifications |
-
----
-
-### 2. 🔄 Closed-Loop Self-Healing Engine
-When an assertion fails inside the Docker test sandbox, the platform automatically intercepts the error, locates the failing line, and triggers a surgical repair:
-
-```mermaid
-flowchart TD
-    Tester["🧪 Tester Agent: Executes Test Suite in Docker"] --> AssertCheck{"All Tests Pass?"}
-    AssertCheck -- Yes --> Reviewer["🛡️ Reviewer Agent: Security & AST Audit"]
-    AssertCheck -- No --> TraceExtractor["Extract Failing File, Line Number & AssertionError"]
-    TraceExtractor --> DevPatch["💻 Developer Agent: Synthesizes Corrected Code"]
-    DevPatch --> DiffRecord["Record Unified Git Diff: Old vs Self-Healed"]
-    DiffRecord --> SandboxRetest["🐳 Docker Sandbox: Re-run Test Harness"]
-    SandboxRetest --> AssertCheck
-    Reviewer --> DocAgent["📝 Doc Agent: OpenAPI & Final Artifacts"]
-```
-
----
-
-### 3. 🖥️ Interactive Live App Preview Sandbox
-- **Responsive Viewport Toggles**: Seamlessly test generated apps across `🖥️ Desktop (100%)`, `💻 Tablet (720px)`, and `📱 Mobile (375px)`.
-- **Isolated Iframe Execution**: Live interactivity without host machine contamination.
-- **Dynamic State Simulation**: Add, filter, complete, and delete records in real-time.
-- **Theme Support**: Integrated dark and light mode toggle.
-
----
-
-### 4. 📦 1-Click Export & GitHub Integration
-- **Download Standalone ZIP**: Instantly bundle the entire generated workspace into a ready-to-run archive.
-- **Push to GitHub**: Direct Personal Access Token / OAuth integration to scaffold a new remote repository with atomic commit history.
-
----
-
-## 🛡️ Security Architecture & Sandbox Boundaries
-
-MyAppMyWeb executes generated code inside hardened ephemeral environments to prevent Arbitrary Code Execution (ACE) and sandbox escapes:
-
-| Control | Specification | Security Objective |
-| :--- | :--- | :--- |
-| **Network Isolation** | `--network none` | Prevents unauthorized telemetry, external network access, and reverse shells. |
-| **User Privileges** | `UID 1000:1000` (Non-Root) | Disables root privilege escalation inside the container. |
-| **Root Filesystem** | `read-only` | Protects base system libraries and container binaries from unauthorized tampering. |
-| **Linux Capabilities**| `--cap-drop=ALL` | Drops all raw kernel, socket, and mounting capabilities. |
-| **Resource Limits** | `512MB RAM`, `1.0 CPU`, `64 PIDs` | Prevents fork bombs and Host Out-of-Memory (OOM) resource starvation. |
-| **Execution Watchdog** | `30s Strict Timeout` | Terminates blocking or infinite loops automatically. |
-
-> Detailed documentation: [**`SECURITY.md`**](SECURITY.md) • [**`security/threat-model.md`**](security/threat-model.md) • [**`security/sandbox-policy.md`**](security/sandbox-policy.md)
+### 4. 📊 Dual-View Application Tracker & Analytics
+- **Kanban Board & Table View**: 6-stage lifecycle tracking (*Saved*, *Applied*, *Screening*, *Interview*, *Offer*, *Rejected*).
+- **Application Drawer**: Log salary offers, recruiter contacts, interview dates, and follow-up reminders.
+- **Career Search Analytics Funnel**: Real-time velocity charts, interview conversion rates, response rates, and high-ROI skill gap roadmaps.
 
 ---
 
 ## 🏗️ System Architecture
 
 ```mermaid
-flowchart TD
-    subgraph UI["Frontend: Next.js 15 Command Center"]
-        PromptBox["Autonomous SWE Prompt Engine"]
-        AgentDAG["Multi-Agent State Graph Visualizer"]
-        TaskBoard["Task DAG Checklist (9 Stages)"]
-        FileTree["Hierarchical Explorer & Syntax Viewer"]
-        DiffView["Self-Healing Before/After Diff Viewer"]
-        LivePreview["Interactive App Preview Sandbox"]
-        Terminal["Live Docker ANSI Log Stream (SSE)"]
+graph TD
+    User([Job Seeker / Candidate]) <--> FE[Next.js 15 App Router + TypeScript + Tailwind CSS]
+    
+    subgraph Frontend Client
+        FE --> UI[Design System: Cards, Modals, Badges, Tabs, Skeletons, Toasts]
+        FE --> CorePages[Landing, Dashboard, Resumes, Jobs, Details, Tracker, AI Studio, Analytics, Profile, Settings]
+        FE --> ApiClient[Type-Safe API Client with JWT Bearer Auth]
     end
-
-    subgraph API["Backend: FastAPI (Python 3.11)"]
-        SSEStream["POST /api/v1/agent/run/stream"]
-        ExportAPI["GET /api/v1/agent/export-zip"]
-        GitHubAPI["POST /api/v1/agent/push-github"]
-        HealthAPI["GET /health"]
+    
+    ApiClient <--> BE[FastAPI Python Backend]
+    
+    subgraph Backend Architecture
+        BE --> Auth[JWT Auth & Password Security]
+        BE --> Routers[Users, Resumes, Jobs, Applications, Analytics, AI Tools]
+        BE --> AIService[AI Copilot Layer]
+        AIService --> LLMAdapter[Gemini / OpenAI / Deterministic Engine]
+        BE --> DB[(PostgreSQL + pgvector / SQLite Fallback)]
+        BE --> RedisCache[(Redis Cache & Queue)]
+        BE --> LocalStorage[Encrypted File Storage]
     end
-
-    subgraph Orchestration["Agent Execution Engine (LangGraph)"]
-        Manager["👑 Manager Agent"]
-        Developer["💻 Developer Agent"]
-        Tester["🧪 Tester Agent"]
-        Reviewer["🛡️ Reviewer Agent"]
-        DocAgent["📝 Documentation Agent"]
-    end
-
-    subgraph Sandboxing["Execution Safety"]
-        DockerRunner["Docker Ephemeral Sandbox / Subprocess"]
-        VirtualFS["In-Memory Virtual AST Filesystem"]
-    end
-
-    PromptBox --> SSEStream --> Manager --> Developer --> VirtualFS --> DockerRunner --> Tester
-    Tester -. Failing Trace .-> Developer
-    Tester -- 100% Passed --> Reviewer --> DocAgent
-    VirtualFS --> ExportAPI & GitHubAPI
-    DockerRunner -. ANSI Stream .-> Terminal
 ```
 
 ---
 
-## 🛠️ Quick Start Guide
+## 🚀 Quick Start Guide
 
 ### Prerequisites
-- **Python 3.10+**
-- **Node.js 18+** & **npm**
-- *(Optional)* **Docker Desktop** (for containerized execution)
+- **Node.js**: v18.0+ (v20+ recommended)
+- **Python**: 3.10+ (3.13 supported)
+- **Docker & Docker Compose** (Optional for containerized run)
 
-### 1. Start Backend Server
+### Option A: Local Development (Fastest, Zero-Setup)
+
+#### 1. Clone & Configure Environment
 ```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python -m uvicorn app.main:app --port 8000 --reload
+git clone https://github.com/Ishant6565/Genai-Study-Copilot.git
+cd Genai-Study-Copilot
+
+# Copy environment settings
+cp .env.example .env
 ```
 
-### 2. Start Frontend Command Center
+#### 2. Start the Backend API (FastAPI)
+```bash
+# In project root:
+python -m pip install -r backend/requirements.txt
+uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port 8000 --reload
+```
+*The backend will automatically initialize and seed demo accounts, curated tech jobs, and resume versions.*
+
+#### 3. Start the Frontend (Next.js)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-Open **[http://localhost:3000](http://localhost:3000)** in your browser!
+#### 4. Open in Browser
+- **Frontend App**: [http://localhost:3000](http://localhost:3000)
+- **Interactive API Swagger Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **API Health Check**: [http://localhost:8000/health](http://localhost:8000/health)
 
 ---
 
-## 📊 API Reference
+### Option B: Docker Compose (Full Stack with PostgreSQL & Redis)
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/api/v1/agent/run/stream` | Stream real-time agent execution events, DAG progress, and Docker logs via SSE |
-| `GET` | `/api/v1/agent/export-zip` | Download the generated project files as a compressed ZIP archive |
-| `POST` | `/api/v1/agent/push-github` | Export the generated codebase directly to a remote GitHub repository |
-| `GET` | `/health` | Service health check and uptime status |
+```bash
+docker-compose up --build
+```
+This boots 4 containers:
+1. `career_copilot_frontend`: Next.js on port 3000
+2. `career_copilot_backend`: FastAPI on port 8000
+3. `career_copilot_postgres`: PostgreSQL with `pgvector` on port 5432
+4. `career_copilot_redis`: Redis 7 on port 6379
 
 ---
 
-## 📂 Repository Structure
+## 🧪 Automated Testing
 
-```text
-MyAppMyWeb/
-├── .github/
-│   ├── workflows/
-│   │   ├── ci.yml                # CI Test & Verification Pipeline
-│   │   └── security-scan.yml     # CodeQL & Security Scanner
-│   └── dependabot.yml            # Automated Dependency Management
-├── docs/
-│   └── images/                   # High-Resolution UI Screenshots
-│       ├── dashboard-overview.png
-│       ├── docker-stream-self-healing.png
-│       ├── live-app-preview.png
-│       └── github-export-modal.png
-├── backend/
-│   ├── app/
-│   │   ├── agents/               # Multi-Agent Definitions
-│   │   │   ├── manager.py        # Spec & Task Decomposition
-│   │   │   ├── developer.py      # Code Generation & Self-Healing
-│   │   │   ├── tester.py         # Test Harness Runner
-│   │   │   ├── reviewer.py       # Static Code & AST Security Audit
-│   │   │   └── documentation.py  # Markdown & OpenAPI Generator
-│   │   ├── api/                  # FastAPI REST & SSE Endpoints
-│   │   ├── graph/                # LangGraph StateGraph Engine
-│   │   ├── sandbox/              # Docker & Virtual FS Sandboxing
-│   │   └── main.py               # Application Entrypoint
-│   ├── Dockerfile
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── app/                  # Next.js 15 App Router
-│   │   └── components/           # Command Center UI Components
-│   │       ├── Header.tsx        # Telemetry & Status Bar
-│   │       ├── AgentDAGVisualizer.tsx
-│   │       ├── TaskBoard.tsx     # 9-Stage Task Execution Checklist
-│   │       ├── CodeEditorView.tsx# Explorer & Code Viewer
-│   │       ├── DiffViewer.tsx    # Self-Healing Git Diff Comparison
-│   │       ├── LiveAppPreview.tsx# Interactive App Simulator
-│   │       ├── ScorecardReview.tsx # Security & Quality Scorecard
-│   │       ├── TerminalLogStream.tsx
-│   │       └── GitHubModal.tsx   # Direct Push Dialog
-│   ├── Dockerfile
-│   └── package.json
-├── security/
-│   ├── threat-model.md           # STRIDE & OWASP Mitigation Matrix
-│   └── sandbox-policy.md         # Hardening & Security Standards
-├── docker-compose.yml
-├── SECURITY.md
-├── CONTRIBUTING.md
-├── LICENSE
-└── README.md
+Run the comprehensive backend test suite verifying authentication, profile creation, semantic job matching, and AI tools:
+
+```bash
+$env:PYTHONPATH="backend"; pytest backend/tests -v
 ```
 
 ---
 
-## 👤 Author
+## 🔑 1-Click Demo Profiles
 
-Developed with ❤️ by **[Ishant6565](https://github.com/Ishant6565)**.
+For instant testing and evaluation without manual registration, the Login page includes 1-click demo access:
+- **Demo User**: Alex Chen (`alex.chen@example.com` / `password123`)
+  - Target Role: Mid-Level Full-Stack Software Engineer
+  - Seeded Resumes: ATS Score 95/100
+  - Applications: 5 active tracking stages across Stripe, Linear, Perplexity AI, Anthropic, and Vercel.
 
-- **GitHub Profile**: [@Ishant6565](https://github.com/Ishant6565)
-- **Repository**: [https://github.com/Ishant6565/Genai-Study-Copilot](https://github.com/Ishant6565/Genai-Study-Copilot)
+---
+
+## 🛡️ Security & Privacy
+- Zero plaintext passwords (all hashed using `bcrypt` with unique salts).
+- Stateless JWT tokens (`HS256`) with configurable expiration.
+- Zero data hallucination guarantee: AI recommendations only enhance existing candidate data.
 
 ---
 
 ## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is open-source and available under the [MIT License](LICENSE).

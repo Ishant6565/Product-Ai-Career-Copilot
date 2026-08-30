@@ -1,147 +1,235 @@
 export interface User {
   id: string;
   email: string;
-  full_name?: string;
+  full_name: string;
+  avatar_url?: string;
   role: string;
-  is_active: boolean;
   created_at: string;
 }
 
-export type DocumentStatus = 'UPLOADING' | 'PROCESSING' | 'INDEXING' | 'READY' | 'FAILED';
+export interface SkillItem {
+  skill_name: string;
+  category: 'frontend' | 'backend' | 'cloud' | 'database' | 'ai_ml' | 'soft' | string;
+  proficiency: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | string;
+  years_experience: number;
+  is_highlighted: boolean;
+}
 
-export interface DocumentItem {
-  id: string;
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  year: string;
+  gpa?: string;
+  highlights?: string;
+}
+
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  location?: string;
+  startDate: string;
+  endDate: string;
+  current: boolean;
+  bullets: string[];
+}
+
+export interface ProjectItem {
   title: string;
-  filename: string;
-  file_size_bytes: number;
-  file_type: string;
-  total_pages: number;
-  total_chunks: number;
-  status: DocumentStatus;
-  error_message?: string;
+  tech: string[];
+  description: string;
+  github?: string;
+  demo?: string;
+}
+
+export interface CertificationItem {
+  name: string;
+  issuer: string;
+  year: string;
+}
+
+export interface UserProfile {
+  id: string;
+  user_id: string;
+  target_role: string;
+  experience_level: string;
+  phone?: string;
+  location: string;
+  preferred_locations: string[];
+  job_types: string[];
+  min_salary: number;
+  max_salary: number;
+  currency: string;
+  bio?: string;
+  education: EducationItem[];
+  experience: ExperienceItem[];
+  projects: ProjectItem[];
+  certifications: CertificationItem[];
+  links: Record<string, string>;
+  profile_completion: number;
+  skills: SkillItem[];
+  updated_at: string;
+}
+
+export interface Resume {
+  id: string;
+  user_id: string;
+  title: string;
+  original_filename: string;
+  version: number;
+  is_primary: boolean;
+  overall_score: number;
+  ats_score: number;
+  impact_score: number;
+  structure_score: number;
+  strengths: string[];
+  weaknesses: string[];
+  missing_keywords: string[];
+  improvement_suggestions: Array<{
+    section: string;
+    current: string;
+    suggested: string;
+    impact: string;
+  }>;
+  raw_text?: string;
+  parsed_content: Record<string, any>;
   created_at: string;
   updated_at: string;
 }
 
-export interface DocumentChunk {
-  id: string;
-  chunk_index: number;
-  page_number: number;
-  content: string;
-  token_count: number;
-  created_at: string;
-}
-
-export interface CitationItem {
-  document_id: string;
-  document_title: string;
-  page_number: number;
-  chunk_id?: string;
-  snippet: string;
-  similarity_score: number;
-}
-
-export interface Message {
-  id: string;
-  conversation_id: string;
-  role: 'user' | 'assistant' | 'system';
-  content: string;
-  citations?: CitationItem[];
-  tokens_used?: { prompt_tokens: number; completion_tokens: number };
-  latency_ms?: { retrieval_ms: number; generation_ms: number };
-  created_at: string;
-}
-
-export interface Conversation {
+export interface Job {
   id: string;
   title: string;
-  document_id?: string;
+  company: string;
+  location: string;
+  is_remote: boolean;
+  job_type: string;
+  experience_level: string;
+  salary_range: string;
+  min_salary?: number;
+  max_salary?: number;
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+  required_skills: string[];
+  preferred_skills: string[];
+  company_logo?: string;
+  apply_url?: string;
+  posted_at: string;
+  is_featured: boolean;
+  is_saved?: boolean;
+  match_score?: number;
+  matching_skills?: string[];
+  missing_skills?: string[];
+}
+
+export interface JobMatchDetail {
+  overall_match: number;
+  skill_fit_score: number;
+  experience_fit_score: number;
+  education_fit_score: number;
+  matching_skills: string[];
+  missing_skills: string[];
+  why_it_matches: string;
+  recommended_resume_version: string;
+  key_recommendations: string[];
+}
+
+export type ApplicationStage = 'saved' | 'applied' | 'screening' | 'interview' | 'offer' | 'rejected';
+
+export interface Application {
+  id: string;
+  user_id: string;
+  job_id?: string;
+  company_name: string;
+  job_title: string;
+  location: string;
+  job_url?: string;
+  status: ApplicationStage;
+  applied_date?: string;
+  salary_offered?: string;
+  recruiter_name?: string;
+  recruiter_email?: string;
+  interview_date?: string;
+  follow_up_date?: string;
+  notes?: string;
+  resume_id?: string;
+  match_score: number;
   created_at: string;
   updated_at: string;
-  message_count?: number;
-  messages?: Message[];
 }
 
-export interface SummaryData {
+export interface BulletOptimization {
+  original: string;
+  optimized: string;
+  impact_explanation: string;
+  added_keywords: string[];
+}
+
+export interface ResumeOptimizeResponse {
+  target_job: string;
+  ats_score_before: number;
+  ats_score_projected: number;
+  matching_keywords: string[];
+  missing_critical_keywords: string[];
+  optimized_summary: string;
+  bullet_improvements: BulletOptimization[];
+  skills_to_highlight: string[];
+}
+
+export interface CoverLetterResponse {
+  recipient: string;
+  subject_line: string;
+  opening_hook: string;
+  body_paragraphs: string[];
+  call_to_action: string;
+  full_markdown: string;
+}
+
+export interface InterviewQuestion {
   id: string;
-  document_id: string;
-  title: string;
-  quick_summary: string;
-  detailed_summary: string;
-  key_concepts: string[];
-  definitions: { term: string; definition: string }[];
-  created_at: string;
-}
-
-export interface QuizQuestion {
-  id: number;
+  type: 'behavioral' | 'technical' | 'situational' | string;
   question: string;
-  options: string[];
-  correct_answer: number;
-  explanation: string;
+  context_rationale: string;
+  star_guide: {
+    Situation: string;
+    Task: string;
+    Action: string;
+    Result: string;
+  };
+  ideal_talking_points: string[];
+  sample_strong_response: string;
 }
 
-export interface QuizData {
-  id: string;
-  document_id: string;
-  title: string;
-  difficulty: 'Easy' | 'Medium' | 'Hard';
-  total_questions: number;
-  questions: QuizQuestion[];
-  created_at: string;
+export interface InterviewPrepResponse {
+  role: string;
+  company: string;
+  readiness_score: number;
+  questions: InterviewQuestion[];
 }
 
-export interface QuizResult {
-  quiz_id: string;
-  total_questions: number;
-  correct_count: number;
-  score_percentage: number;
-  feedback: string;
-  details: {
-    question_id: number;
-    question: string;
-    options: string[];
-    selected_option: number;
-    correct_option: number;
-    is_correct: boolean;
-    explanation: string;
-  }[];
+export interface InterviewAnswerEvaluation {
+  score: number;
+  star_breakdown: {
+    Situation: string;
+    Task: string;
+    Action: string;
+    Result: string;
+  };
+  strengths: string[];
+  weaknesses: string[];
+  suggested_rewrite: string;
+  coach_tip: string;
 }
 
-export interface Flashcard {
-  id: string;
-  document_id: string;
-  front: string;
-  back: string;
-  category: string;
-  difficulty: string;
-  created_at: string;
-}
-
-export interface RAGMetricItem {
-  id: string;
-  query: string;
-  retrieval_latency_ms: number;
-  generation_latency_ms: number;
-  total_latency_ms: number;
-  top_k_chunks: number;
-  avg_similarity_score: number;
-  prompt_tokens: number;
-  completion_tokens: number;
-  model_name: string;
-  status: string;
-  created_at: string;
-}
-
-export interface MetricsSummary {
-  total_queries: number;
-  avg_total_latency_ms: number;
-  avg_retrieval_latency_ms: number;
-  avg_generation_latency_ms: number;
-  total_prompt_tokens: number;
-  total_completion_tokens: number;
-  success_rate_percentage: number;
-  total_documents: number;
-  total_chunks: number;
-  recent_metrics: RAGMetricItem[];
+export interface AnalyticsOverview {
+  total_applications: number;
+  interviews_scheduled: number;
+  offers_received: number;
+  average_match_score: number;
+  interview_conversion_rate: number;
+  response_rate: number;
+  applications_by_status: Record<string, number>;
+  weekly_applications: Array<{ week: string; applications: number; interviews: number }>;
+  top_in_demand_skills: Array<{ skill: string; demand_percentage: number; user_has: boolean }>;
+  skill_gap_matrix: Array<{ skill: string; impact: string; missing_in_jobs: number; estimated_hours: number; recommended_action: string }>;
 }
