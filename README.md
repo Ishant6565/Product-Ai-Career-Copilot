@@ -1,63 +1,102 @@
 <div align="center">
 
-# 🏛️ AI Career Copilot
-### Autonomous AI Career Management & Technical Dossier Intelligence Cockpit
+# 🏛️ AI CAREER COPILOT
+### Autonomous Engineering Career Cockpit & Technical Dossier Intelligence Platform
 
 [![Next.js 15](https://img.shields.io/badge/Next.js_15-App_Router-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-000000?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Design](https://img.shields.io/badge/Design-Minimalist_Monochrome-000000?style=for-the-badge)](https://github.com/Ishant6565/Product-Ai-Career-Copilot)
-[![TypeScript](https://img.shields.io/badge/TypeScript_5-000000?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-000000?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Design System](https://img.shields.io/badge/Design-Minimalist_Monochrome-000000?style=for-the-badge)](https://github.com/Ishant6565/Product-Ai-Career-Copilot)
+[![TypeScript 5](https://img.shields.io/badge/TypeScript_5-000000?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS 3](https://img.shields.io/badge/Tailwind_CSS_3-000000?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-000000?style=for-the-badge)](LICENSE)
 
 <br />
 
 <p align="center">
-  <strong>An architectural, high-craft AI career intelligence cockpit designed for software engineers, systems architects, and technical leaders.</strong><br />
-  Multi-Version ATS Audit • Deterministic Cosine Job Matcher • Non-Hallucinatory Bullet Optimizer • Tailored Cover Letter Architect • STAR AI Mock Interview Coach • 6-Stage Kanban Pipeline • Conversion Telemetry Funnel
+  <strong>An architectural, high-craft AI career operating system engineered for software engineers, systems architects, and technical leaders.</strong><br />
+  Multi-Version ATS Registry • Deterministic Cosine Job Matcher • Surgical Non-Hallucinatory Bullet Optimizer • Tailored Cover Letter Architect • STAR AI Mock Interview Coach • 6-Stage Kanban Pipeline • Conversion Telemetry Funnel
 </p>
 
 </div>
 
 ---
 
-## 🎨 Minimalist Monochrome Aesthetic
+## 📑 Table of Contents
 
-AI Career Copilot features a high-craft **Minimalist Monochrome** design system engineered with editorial precision and zero visual clutter:
-
-- **Editorial Typography Hierarchy**:
-  - **Headlines & Mastheads**: `Playfair Display` serif for oversized, authoritative titles.
-  - **Narrative & Long-Form**: `Source Serif 4` serif for descriptions, executive summaries, and bullet points.
-  - **System Telemetry & Metadata**: `JetBrains Mono` for scores, timestamps, KPIs, tags, and form labels.
-- **Strict Geometric Precision**: Global `0px` border-radius across cards, buttons, badges, modals, tabs, and inputs.
-- **High-Contrast Palette**: Pure `#000000` (Deep Ink Black), `#FFFFFF` (Pure Crisp White), and architectural neutral grays.
-- **Tactile Micro-Interactions**: Instant `100ms` hover color inversions with crisp white text on black background.
-- **Deep Architectural Rules**: 1px–4px solid black framing rules and structured technical data grids.
+- [Architectural Philosophy & Design System](#-architectural-philosophy--design-system)
+- [Key Feature Modules](#-key-feature-modules)
+  - [1. Multi-Version Resume Registry & ATS Audit](#1--multi-version-resume-registry--ats-audit)
+  - [2. Semantic Job Discovery & Custom JD Vector Scanner](#2--semantic-job-discovery--custom-jd-vector-scanner)
+  - [3. Zero-Hallucination AI Career Studio](#3--zero-hallucination-ai-career-studio)
+  - [4. Dual-View Pipeline Kanban Tracker](#4--dual-view-pipeline-kanban-tracker)
+  - [5. Career Conversion Funnel & Capability Gap Matrix](#5--career-conversion-funnel--capability-gap-matrix)
+  - [6. Candidate Dossier & Taxonomy Engine](#6--candidate-dossier--taxonomy-engine)
+- [System Architecture](#-system-architecture)
+- [Repository Structure](#-repository-structure)
+- [API Specification](#-api-specification)
+- [Quick Start Guide](#-quick-start-guide)
+- [1-Click Instant Demo Personas](#-1-click-instant-demo-personas)
+- [Automated Testing & CI/CD](#-automated-testing--cicd)
+- [Security, Privacy & Ethics](#-security-privacy--ethics)
+- [Contributing & License](#-contributing--license)
 
 ---
 
-## 🌟 Core Product Capabilities
+## 🎨 Architectural Philosophy & Design System
+
+AI Career Copilot breaks away from generic SaaS aesthetics, adopting a bespoke **Minimalist Monochrome** design system inspired by architectural monographs and financial gazettes.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│  MINIMALIST MONOCHROME SPECIFICATION                                  │
+├───────────────────┬────────────────────────────────────────────────────┤
+│ Headline Display  │ Playfair Display (Serif, High-Contrast, Bold)     │
+│ Narrative Body    │ Source Serif 4 (Editorial Serif, 400/600)          │
+│ System Telemetry  │ JetBrains Mono (Monospace, Tracking-Widest, Bold)  │
+│ Geometry          │ Strict 0px Border Radius Globally (No Pills)       │
+│ Color Palette     │ #000000 (Pure Ink Black) & #FFFFFF (Pure White)    │
+│ Micro-Interaction │ Instant 100ms Inversion (White Card -> Black Card) │
+│ Framing Dividers  │ 1px, 2px, and 4px Deep Architectural Line Rules    │
+└───────────────────┴────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🌟 Key Feature Modules
 
 ### 1. 🎯 Multi-Version Resume Registry & ATS Audit
-- **Deep ATS Auditing**: Calculates composite resume scores, ATS structural compatibility, action verb intensity, and ISO hierarchy.
-- **Stack-Specific Versioning**: Maintain dedicated resumes per specialization (*Full-Stack Standard V1*, *Backend Systems V2*, *AI Infrastructure V3*).
-- **Keyword Gap Detection**: Extracts verified technical capabilities and flags missing domain keywords required by target postings.
-- **Side-by-Side Bullet Calibration**: 1-click surgical before/after bullet point optimization with zero hallucination.
+- **Composite ATS Scorer**: Evaluates resumes across 4 deterministic vectors:
+  - *Structural ISO Hierarchy (94%)*
+  - *ATS Machine Parsing Compatibility (95%)*
+  - *Action Verb & Quantifiable Impact Intensity (88%)*
+  - *Technical Keyword Density (91%)*
+- **Specialization Versioning**: Maintain dedicated resume editions per target tech stack (*Full-Stack Standard V1*, *Backend Distributed Systems V2*, *AI Infrastructure V3*).
+- **Side-by-Side Bullet Calibration**: 1-click surgical before/after transformation that elevates passive verbs into quantifiable engineering achievements.
 
-### 2. 🔍 Semantic Job Catalog & Vector JD Scanner
-- **Real-Time Match Index**: Weighted algorithm evaluating candidate skills (50%), experience depth (30%), and education alignment (20%).
-- **Multi-Facet Filtering**: Filter listings by role type, seniority tier, workplace modality (Remote/Hybrid/On-Site), and fit percentage.
-- **Custom JD Vector Scanner**: Paste any raw job description from LinkedIn, Indeed, or internal portals for instant AI match telemetry and gap breakdowns.
+### 2. 🔍 Semantic Job Discovery & Custom JD Vector Scanner
+- **Deterministic Cosine Match Index**: Computes multi-vector alignment between candidate capabilities and target postings:
+  $$\text{Match Index} = 0.50 \cdot S_{\text{skills}} + 0.30 \cdot S_{\text{experience}} + 0.20 \cdot S_{\text{education}}$$
+- **Custom JD Vector Scanner**: Paste any raw job description from LinkedIn, Indeed, or internal portals to receive instant AI compatibility telemetry, matching capability highlights, and critical gap breakdowns.
+- **Faceted Discovery**: Multi-parameter search across seniority (Entry, Mid, Senior, Lead), workplace modality (Remote, Hybrid, On-Site), and minimum fit score.
 
 ### 3. 🪄 Zero-Hallucination AI Career Studio
-- **Surgical Bullet Optimizer**: Upgrades bullet points using strong active verbs (*Architected*, *Engineered*, *Scaled*) and quantifiable metrics (*P99 latency, RPS throughput*) without fabricating false history.
+- **Surgical Bullet Optimizer**: Upgrades bullet points using high-velocity active verbs (*Architected*, *Engineered*, *Scaled*) with verified numerical outcomes (*P99 latency reduction, QPS capacity*) with zero hallucination.
 - **Cover Letter Architect**: Generates tailored, non-cliche cover letters matching customizable tones (*Confident & Impact-Driven*, *Technical & Architectural*, *Formal*).
-- **STAR Mock Interview Coach**: Role-specific technical, behavioral, and situational question generator with real-time STAR evaluation (Situation, Task, Action, Result), coach feedback, and refined answer rewrites.
+- **STAR Mock Interview Coach**: Role-specific technical, behavioral, and situational question generator with interactive answer input, real-time STAR evaluation (Situation, Task, Action, Result), coach feedback, and polished rewrite suggestions.
 
-### 4. 📊 Dual-View Application Pipeline & Telemetry Funnel
-- **Kanban Board & Table List**: 6-stage lifecycle tracking (*Saved*, *Applied*, *Screening*, *Interview*, *Offer*, *Rejected*).
-- **Opportunity Dossier**: Log salary offers, recruiter notes, interview schedules, and stage transitions.
-- **Career Conversion Funnel**: Track stage velocity, interview conversion ratios, response rates, and actionable skill gap remediation roadmaps.
+### 4. 📊 Dual-View Pipeline Kanban Tracker
+- **6-Stage Lifecycle Tracking**: Transition applications effortlessly across `Saved`, `Applied`, `Screening`, `Interview`, `Offer`, and `Rejected`.
+- **Dual Visual Modes**: Toggle between an architectural 6-column Kanban Board and a compact Table List View.
+- **Opportunity Dossier**: Log offer compensations, recruiter coordinates, interview rounds, and notes.
+
+### 5. 📈 Career Conversion Funnel & Capability Gap Matrix
+- **Pipeline Telemetry**: Measure funnel drop-off rates, interview conversion ratios (2.8x industry average), and response velocity.
+- **Capability Gap Remediation**: Identifies in-demand market vectors missing from candidate profile with estimated engineering hours and action blueprints.
+
+### 6. 👤 Candidate Dossier & Taxonomy Engine
+- **Structured Capability Taxonomy**: Categorize verified engineering skills across *Frontend*, *Backend*, *Database*, *Cloud Infrastructure*, and *System Architecture*.
+- **Milestone Timeline**: Chronological record of engineering deliverables and academic credentials.
+- **Compensation Bounds**: Real-time salary baseline and target range filters.
 
 ---
 
@@ -65,24 +104,97 @@ AI Career Copilot features a high-craft **Minimalist Monochrome** design system 
 
 ```mermaid
 graph TD
-    User([Candidate / Engineer]) <--> FE[Next.js 15 App Router + Tailwind CSS]
+    User([Candidate / Engineer]) <--> FE[Next.js 15 Client • Minimalist Monochrome UI]
     
-    subgraph Frontend Client
-        FE --> UI[Minimalist Monochrome Components: 0px Radius, Serif & Mono Typography]
-        FE --> CorePages[Landing, Dashboard, Resumes, Jobs, Details, Tracker, AI Studio, Analytics, Profile, Settings]
-        FE --> ApiClient[Type-Safe API Client with JWT Bearer Auth]
+    subgraph Frontend Architecture
+        FE --> CorePages[App Router: Dashboard, Resumes, Jobs, AI Studio, Tracker, Analytics, Dossier, Settings]
+        FE --> CommonUI[Design Tokens: Cards, Modals, Badges, Tabs, Skeletons]
+        FE --> ApiClient[Type-Safe API Client with JWT Bearer Authentication]
     end
     
-    ApiClient <--> BE[FastAPI Python Backend]
+    ApiClient <--> BE[FastAPI Python High-Throughput Backend]
     
-    subgraph Backend Engine
-        BE --> Auth[JWT Auth & Bcrypt Security]
-        BE --> Routers[Auth, Profile, Resumes, Jobs, Applications, Analytics, AI Tools]
-        BE --> AIService[AI Copilot Layer]
-        AIService --> LLMAdapter[Gemini 2.5 Flash / Deterministic Offline Engine]
-        BE --> DB[(SQLite Database / PostgreSQL + pgvector)]
+    subgraph Backend Architecture
+        BE --> Auth[JWT Security & Bcrypt Hashing]
+        BE --> Routers[Auth, Profile, Resumes, Jobs, Applications, Analytics, AI Studio]
+        BE --> AIService[AI Copilot Core]
+        AIService --> ModelRouter[Google Gemini 2.5 Flash / Deterministic Offline Engine]
+        BE --> Storage[SQLite DB / PostgreSQL + pgvector Engine]
     end
 ```
+
+---
+
+## 📁 Repository Structure
+
+```
+Product-Ai-Career-Copilot/
+├── backend/                         # FastAPI Python Backend
+│   ├── app/
+│   │   ├── api/                     # REST API Route Handlers
+│   │   │   ├── routes_ai.py         # AI Studio & STAR Coach Endpoints
+│   │   │   ├── routes_analytics.py  # Funnel & Telemetry Analytics
+│   │   │   ├── routes_applications.py # Kanban Pipeline CRUD
+│   │   │   ├── routes_auth.py       # Authentication & JWT Tokens
+│   │   │   ├── routes_jobs.py       # Semantic Job Search & JD Scanner
+│   │   │   ├── routes_profile.py    # Candidate Dossier & Skill Taxonomy
+│   │   │   └── routes_resumes.py    # ATS Resume Parser & Scorer
+│   │   ├── core/                    # App Configuration & Settings
+│   │   ├── db/                      # Database Schema & Seed Data
+│   │   ├── models/                  # SQLAlchemy ORM Models
+│   │   ├── schemas/                 # Pydantic Request/Response Models
+│   │   ├── services/                # Semantic Matching & AI Engine
+│   │   └── main.py                  # FastAPI Application Entrypoint
+│   ├── requirements.txt             # Python Dependencies
+│   └── pytest.ini                   # Test Suite Configuration
+│
+├── frontend/                        # Next.js 15 App Router Frontend
+│   ├── src/
+│   │   ├── app/                     # Next.js App Router Pages
+│   │   │   ├── page.tsx             # Editorial Landing Page
+│   │   │   ├── dashboard/           # Executive Command Center
+│   │   │   ├── resumes/             # Multi-Version Resume Hub
+│   │   │   ├── jobs/                # Semantic Job Catalog & Details
+│   │   │   ├── tracker/             # 6-Stage Kanban Pipeline
+│   │   │   ├── ai-tools/            # AI Career Studio & STAR Coach
+│   │   │   ├── analytics/           # Conversion Funnel & Skill Gaps
+│   │   │   ├── profile/             # Candidate Dossier Matrix
+│   │   │   ├── settings/            # System & AI Provider Routing
+│   │   │   ├── login/ & register/   # 1-Click Demo Authentication
+│   │   │   ├── layout.tsx           # Google Fonts & Global Shell
+│   │   │   └── globals.css          # Minimalist Monochrome CSS Tokens
+│   │   ├── components/common/       # Button, Card, Badge, Modal, Navbar, Sidebar
+│   │   ├── lib/                     # API Client & Auth Context
+│   │   └── types/                   # TypeScript Type Definitions
+│   ├── tailwind.config.ts           # 0px Radius & Monochrome Color Tokens
+│   └── package.json                 # Frontend Dependencies
+│
+├── docker-compose.yml               # Containerized Full-Stack Deployment
+├── .env.example                     # Environment Configuration Template
+└── README.md                        # Documentation
+```
+
+---
+
+## 🔌 API Specification
+
+| Method | Endpoint | Description | Auth |
+|---|---|---|---|
+| `POST` | `/api/v1/auth/login` | Authenticate user & return JWT bearer token | Public |
+| `POST` | `/api/v1/auth/register` | Register new candidate account | Public |
+| `GET` | `/api/v1/profile` | Retrieve structured candidate dossier | Bearer |
+| `PUT` | `/api/v1/profile` | Update profile telemetry, skills, and bounds | Bearer |
+| `GET` | `/api/v1/resumes` | List all resume versions with ATS scores | Bearer |
+| `POST` | `/api/v1/resumes/upload` | Ingest and parse raw resume text/file | Bearer |
+| `GET` | `/api/v1/jobs` | Search & filter jobs with semantic match scoring | Bearer |
+| `POST` | `/api/v1/jobs/custom-scan` | Real-time vector JD scanner for custom text | Bearer |
+| `GET` | `/api/v1/applications` | Retrieve Kanban pipeline applications | Bearer |
+| `PUT` | `/api/v1/applications/{id}/status` | Update application stage (e.g., Interview -> Offer) | Bearer |
+| `POST` | `/api/v1/ai/optimize-bullet` | Surgical bullet optimization with metrics | Bearer |
+| `POST` | `/api/v1/ai/generate-cover-letter` | Synthesize tailored executive cover letter | Bearer |
+| `POST` | `/api/v1/ai/interview-prep` | Generate STAR interview questions & evaluations | Bearer |
+| `GET` | `/api/v1/analytics` | Retrieve stage funnel velocity and gap matrices | Bearer |
+| `GET` | `/health` | Server health check endpoint | Public |
 
 ---
 
@@ -100,29 +212,29 @@ graph TD
 git clone https://github.com/Ishant6565/Product-Ai-Career-Copilot.git
 cd Product-Ai-Career-Copilot
 
-# Create environment configuration
+# Create local environment config
 cp .env.example .env
 ```
 
 ---
 
-### Step 2: Start the Backend API (FastAPI)
+### Step 2: Start the Backend Server (FastAPI)
 
 ```bash
-# Install backend dependencies:
+# Install Python dependencies:
 python -m pip install -r backend/requirements.txt
 
-# Start FastAPI server on port 8000:
+# Run FastAPI backend on port 8000:
 python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000 --reload
 ```
-> *The backend automatically initializes and seeds candidate dossiers, curated tech listings, and multi-version ATS resumes.*
+> *On launch, the SQLite database auto-initializes and seeds candidate profiles, tech listings, and multi-version ATS resumes.*
 
 ---
 
-### Step 3: Start the Frontend Client (Next.js 15)
+### Step 3: Start the Frontend Application (Next.js 15)
 
 ```bash
-# In a new terminal window:
+# In a separate terminal window:
 cd frontend
 npm install
 npm run dev
@@ -133,29 +245,27 @@ npm run dev
 ### Step 4: Access in Browser
 
 - **Frontend App**: [http://localhost:3000](http://localhost:3000)
-- **Interactive API Swagger Docs**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- **API Health Check**: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+- **Interactive Swagger Docs**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **Health Check**: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
 
 ---
 
 ## 🔑 1-Click Instant Demo Personas
 
-For instant exploration without manual registration, the Login page includes 1-click persona launchers:
+The Login page includes 1-click persona launchers for instant zero-friction evaluation:
 
-| Persona | Role | Seeded Profile Data |
+| Persona | Title | Seeded Telemetry |
 |---|---|---|
 | **Alex Chen** | Full-Stack Software Engineer | ATS Score 95/100 • 5 Active Applications (Stripe, Linear, Perplexity AI, Anthropic, Vercel) |
 | **Sarah Jenkins** | Senior AI/ML Systems Engineer | ATS Score 98/100 • Seeded PyTorch / LLM Infrastructure Projects |
-| **Marcus Vance** | Principal Product Architect | ATS Score 94/100 • Product telemetry & system metrics |
+| **Marcus Vance** | Principal Product Architect | ATS Score 94/100 • High-scale product telemetry & metrics |
 
 ---
 
-## 🧪 Automated Testing & Verification
-
-Run the comprehensive backend and frontend test suites:
+## 🧪 Automated Testing & CI/CD
 
 ```bash
-# Run Backend Test Suite:
+# Run Backend Test Suite (FastAPI + Pytest):
 $env:PYTHONPATH="backend"; pytest backend/tests -v
 
 # Run Frontend Production Build Validation:
@@ -165,13 +275,15 @@ npm run build
 
 ---
 
-## 🛡️ Security & Privacy
-- **Stateless JWT Tokens**: Industry-standard `HS256` signed bearer tokens.
-- **Cryptographic Password Hashing**: Passwords secured via `bcrypt` with unique salts.
-- **Zero Generative Hallucination**: AI algorithms augment existing verified engineering accomplishments without fabricating experience.
+## 🛡️ Security, Privacy & Ethics
+- **Stateless JWT Tokens**: Signed `HS256` bearer tokens with configurable expiration.
+- **Cryptographic Security**: Passwords hashed using `bcrypt` with unique salts.
+- **Zero Generative Hallucination**: AI algorithms augment verified accomplishments without fabricating false credentials.
+- **Offline Semantic Engine**: Built-in deterministic fallback for resume parsing and matching with zero API key dependencies.
 
 ---
 
 ## 📄 License
 This project is open-source and licensed under the [MIT License](LICENSE).
+
 
