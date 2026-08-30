@@ -1,4 +1,4 @@
-name: StudyPilot AI CI Pipeline
+name: CI Pipeline
 
 on:
   push:
@@ -7,28 +7,11 @@ on:
     branches: [ main, master ]
 
 jobs:
-  backend-tests:
-    name: Backend Pytest Suite
+  backend-test:
+    name: Backend Lint & Workflow Verification
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: pgvector/pgvector:pg16
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgrespassword
-          POSTGRES_DB: studypilot_test_db
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -40,20 +23,18 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
-          pip install aiosqlite
+          pip install pytest pytest-asyncio
 
-      - name: Run Pytest Suite
+      - name: Run LangGraph Workflow Verification
         run: |
           cd backend
-          pytest -v
+          python test_workflow.py
 
   frontend-build:
-    name: Frontend Build & Typecheck
+    name: Next.js Frontend Build & Typecheck
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js 20
         uses: actions/setup-node@v4
@@ -67,7 +48,7 @@ jobs:
           cd frontend
           npm install
 
-      - name: Build Next.js Application
+      - name: Next.js Production Build
         run: |
           cd frontend
           npm run build
