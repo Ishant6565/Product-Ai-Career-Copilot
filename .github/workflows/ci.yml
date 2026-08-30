@@ -27,7 +27,9 @@ jobs:
       - name: Run Backend API Test Suite
         run: |
           cd backend
-          pytest tests/ -v
+          python -m pytest tests/ -v
+        env:
+          PYTHONPATH: .
 
   frontend-build:
     name: Next.js Frontend Build & Typecheck
