@@ -50,4 +50,7 @@ mental-health-score/
 backend/storage_data/
 .agents/
 *.tsbuildinfo
+CHESS-AI/
+prisma-studio/
+
 
